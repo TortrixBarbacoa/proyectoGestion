@@ -1,0 +1,56 @@
+<!-- * Vista Principal Login -->
+<div class="main-holder">
+
+    <!-- * Contenedor Card del Login -->
+    <div class="login-holder row container-fluid">
+
+        <!-- * Contenedor de Información del Login (Formulario y Logo) -->
+        <div class="info-holder">
+
+            <!-- Logo -->
+            <div class="login-logo-holder">
+                <img src="../../../assets/img/Login-Logo.png" class="img-fluid" alt="Logo">
+            </div>
+
+            <!-- Formulario -->
+            <form class="login-form-holder" [formGroup]="formReg" (ngSubmit)="onSubmit()">
+
+                <!-- Título -->
+                <h1>Iniciar Sesión</h1>
+
+                <!-- Input Email -->
+                <div class="input-form-holder">
+                    <h2>Email</h2>
+                    <input type="text" class="form-control input-style-login" value="email" formControlName="email" placeholder="Ingresa tu correo electrónico">
+                </div>
+
+                <!-- Input Contraseña -->
+                <div class="input-form-holder">
+                    <h2>Contraseña</h2>
+                    <input type="password" class="form-control input-style-login" value="pass" formControlName="password" placeholder="Ingresa tu contraseña">
+                </div>
+
+                <h3> {{errorFire}} </h3>
+
+                <!-- Botón Ingresar -->
+                <button class="btn btn-login" type="submit" value="Enviar">
+                    <h1>Ingresar</h1>
+                </button>
+
+                <!-- Link Registro -->
+                <div class="alternative-link-holder">
+                    <div class="alternative-link">
+                        <p>¿Aún no estás registrado? <a routerLink="/register">¡Crea una cuenta aquí!</a></p>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Imagen -->
+        <div class="col picture-holder .d-none .d-lg-block .d-xl-none"> </div>
+
+    </div>
+    
+</div>

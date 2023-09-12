@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gestionprestamos-f4449": {
+      "hosting": {
+        "proyectoGestion": [
+          "gestionprestamos-f4449"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gestionprestamos-f4449"
+  }
+}

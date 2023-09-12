@@ -1,0 +1,171 @@
+
+/* * Estilos de Letra */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #004AAD;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 2.3rem;
+    color: #004AAD;
+    margin: 0;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    color: black;
+    margin: 0;
+}
+
+/* * Holder principal de la calculadora */
+.calc-main-holder {
+    height: 38rem;
+    width: 79rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/* * Estilo Calculadora */
+.calc-holder {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+    height: 95%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+/* * Estilo info */
+.info-holder {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 95%;
+    width: 100%;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* * Elemento en info */
+.info-holder-element-container {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0.8rem;
+}
+
+/* * Input Calculadora */
+.input-form-holder {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    text-align: start;
+    width: 85%;
+}
+
+/* * Input Cuotas */
+.input-style-calc-number {
+    width: 100%;
+    align-self: center;
+    height: 5.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #EBEBEB;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;
+    padding-left: 1rem;
+}
+
+/* Focus input calculadora */
+.input-style-calc-number:focus {
+    outline: none;
+}
+
+/* * Demás inputs */
+.input-style-calc {
+    width: 100%;
+    align-self: center;
+    height: 5.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #EBEBEB;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Focus demás inputs */
+.input-style-calc:focus {
+    outline: none;
+}
+
+/* * Estilo del placeholder de los inputs */
+::placeholder{
+    color: #A4A4A4;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;
+    padding-left: 1rem;
+}
+
+/* * Estilo del select */
+select {
+    color: #004AAD;
+    appearance: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    appearance: none;
+}
+
+/* * Estilo del botón de calcular */
+.btn-calc {
+    margin-top: 1.2rem;
+    width: 85%;
+    border-radius: 0.3rem;
+    border: none;
+    color: white;
+    background-color: #004AAD;
+}
+
+/* Estilo del botón calcular al pasar el mouse por encima */
+.btn-calc:hover {
+    transition: ease-in-out;
+    scale: 1.01;
+    cursor: pointer;
+}
+
+/* Estilo del texto del botón calcular */
+.btn-calc h1 {
+    margin: 0.7rem;
+    color: white;
+}

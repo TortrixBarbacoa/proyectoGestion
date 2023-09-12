@@ -1,0 +1,71 @@
+
+<!-- * Vista General Componente Calculadora -->
+<div class="calc-main-holder container-fluid">
+
+    <!-- * Calculadora -->
+    <div class="calc-holder container-fluid">
+
+        <!-- Título -->
+        <h1>Calculadora de Intereses</h1>
+
+        <!-- Input Capital -->
+        <div class="input-form-holder">
+            <input type="number" min="0" class="form-control input-style-calc" placeholder="Capital">
+        </div>
+
+        <!-- Input Cuotas -->
+        <div class="input-form-holder">
+            <select class="input-style-calc-number" name="monthly" id="monthly">
+                <option value="default" selected disabled>Seleccionar número de cuotas</option>
+                <option value="3">3</option>
+                <option value="6">6</option>
+                <option value="12">12</option>
+                <option value="18">18</option>
+                <option value="24">24</option>
+                <option value="36">36</option>
+                <option value="48">48</option>
+                <option value="60">60</option>
+                <option value="72">72</option>
+                <option value="84">84</option>
+                <option value="96">96</option>
+                <option value="108">108</option>
+                <option value="120">120</option>
+            </select>
+            
+            <i class="fa-solid fa-chevron-down" style="margin: -2.5rem; color: #004AAD;"></i>
+        </div>
+
+        <!-- Input Tasa de Interés -->
+        <div class="input-form-holder">
+            <input type="number" min="0" class="form-control input-style-calc" placeholder="Tasa de Interés">
+        </div>
+
+        <!-- Botón Calcular -->
+        <button class="btn btn-calc">
+            <h1>Calcular</h1>
+        </button>
+
+    </div>
+
+    <!-- * Información -->
+    <div class="info-holder container-fluid">
+
+        <!-- Elemento Cuotas sin Interés -->
+        <div class="info-holder-element-container" style="margin-top: 0;">
+            <h2 style="margin-left: 2.5rem;">Cuotas sin interés</h2>
+            <h3 style="align-self: end; margin-right: 2.5rem;">0.00</h3> <!-- TODO: Variable quemada, hacer fecth -->
+        </div>
+
+        <!-- Elemento Interés Mensual -->
+        <div class="info-holder-element-container">
+            <h2 style="margin-left: 2.5rem;">Interés mensual</h2>
+            <h3 style="align-self: end; margin-right: 2.5rem;">0.00</h3> <!-- TODO: Variable quemada, hacer fecth -->
+        </div>
+
+        <!-- Elemento Cuotas con Interés -->
+        <div class="info-holder-element-container" style="margin-bottom: 0;">
+            <h2 style="margin-left: 2.5rem;">Cuotas con interés</h2>
+            <h3 style="align-self: end; margin-right: 2.5rem;">0.00</h3></div> <!-- TODO: Variable quemada, hacer fecth -->
+        </div>
+        
+</div>

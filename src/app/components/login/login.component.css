@@ -1,0 +1,148 @@
+
+/* * Fuente h1 general, usada para el título */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+}
+
+/* * Fuente h2 general, usada en subtítulos del form */
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;
+    color: #737373;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+}
+
+h3 {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: #FF5757;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* * Contenedor del login, el cuadro del centro */
+.login-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 79%;
+    height: 83%;
+}
+
+/* * Holder con la imagen de la derecha */
+.picture-holder {
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    background-size: auto;
+    background-image: url("../../../assets/img/Login-Side.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* * Holder izquierdo, en él se incluyen el logo y el formulario */
+.info-holder {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* * Holder del logo */
+.login-logo-holder {
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+/* * Holder del formulario de inicio de sesión */
+.login-form-holder {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* * Holder de los inputs */
+.input-form-holder {
+    margin-bottom: 1.5rem ;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    text-align: start;
+    width: 70%;
+}
+
+/* * Estilo de los inputs */
+.input-style-login {
+    width: 99%;
+    align-self: center;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #EBEBEB;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Retirar borde al dar click en los inputs */
+.input-style-login:focus {
+    outline: none;
+}
+
+/* * Estilo del placeholder de los inputs */
+::placeholder{
+    color: #A4A4A4;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 200;
+    padding-left: 1rem;
+}
+
+/* * Estilo del botón de inicio de sesión */
+.btn-login {
+    width: 75%;
+    border-radius: 0.3rem;
+    border: none;
+    color: white;
+    background-color: black;
+}
+
+/* Estilo del botón de inicio de sesión al pasar el mouse por encima */
+.btn-login:hover {
+    transition: ease-in-out;
+    scale: 1.01;
+    cursor: pointer;
+}
+
+/* Estilo del texto del botón de inicio de sesión */
+.btn-login h1 {
+    margin: 0.7rem;
+    color: white;
+}
+
+
+

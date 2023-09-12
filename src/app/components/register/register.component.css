@@ -1,0 +1,100 @@
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black;
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;
+    color: #737373;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+}
+
+h3 {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    color: #FF5757;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.register-holder {
+    background-color: white;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    width: 40%;
+    height: 90%;
+}
+
+/* * Holder del logo */
+.register-logo-holder {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.register-form-holder {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form-holder {
+    margin-bottom: 1.5rem ;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    text-align: start;
+    width: 70%;
+}
+
+.input-style-register {
+    width: 99%;
+    align-self: center;
+    height: 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #EBEBEB;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.btn-register {
+    width: 75%;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #004AAD;
+}
+
+.btn-register h1{
+    color: white;
+    margin: 1rem;
+}
+
+.btn-register:hover {
+    transition: ease-in-out;
+    scale: 1.01;
+    cursor: pointer;
+}
+

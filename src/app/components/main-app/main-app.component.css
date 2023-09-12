@@ -1,0 +1,174 @@
+/* * Estilo top bar */
+.top-bar {
+    background-color: #004AAD;
+    width: 100%;
+    height: 9%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/* * Estilos de letra */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    margin: 0;
+    font-style: italic;
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 550;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* * Holder título/logo */
+.app-title-holder {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 35%;
+    height: 100%;
+}
+
+/* * Holder nombre */
+.user-name-holder {
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/* * Holder cambio de moneda */
+.currency-change-holder {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    height: 100%;
+}
+
+/* * Escalar logo */
+.logo-top {
+    scale: 0.8;
+}
+
+/* * Estilo cambio de moneda */
+.currency-change {
+    width: 50%;
+    height: 60%;
+    background-color: white;
+    border-radius: 0.4rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+}
+
+/* Hover cambio de moneda */
+.currency-change:hover{
+    cursor: pointer;
+}
+
+/* * Estilo select */
+select {
+    color: #004AAD;
+    appearance: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* * Estilo botón */
+.btn {
+    border: none;
+}
+
+/* * Holder de aplicación */
+.app-holder {
+    width: 100%;
+    height: 91%;
+    justify-content: start;
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+}
+
+/* * Holder sidebar */
+.sidebar-main {
+    height: 100%;
+    width: 14%;
+    justify-content: start;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+    background-color: black;
+}
+
+/* * Holder de opciones en sidebar */
+.side-element-holder {
+    width: 100%;
+    height: 3rem;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+/* * Indicador de link/componente activo */
+.active-page-flag{
+    height: 80%;
+    width: 0.3rem;
+    background-color: white;
+}
+
+/* * Contenido en el side (Opciones disponibles) */
+.side-element-holder-content {
+    margin-left: 2rem;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Hover en el elemento del side */
+.side-element-holder-content:hover {
+    cursor: pointer;
+}
+
+/* * Indicador de activo true (Aplica al texto) */
+.active-true {
+    color: white;
+}
+
+/* * Indicador de activo false (Aplica al texto) */
+.active-false {
+    color: #A4A4A4;
+}
+
+/* * Ícono en las opciones sidebar */
+.side-icon-style {
+    margin-right: 0.8rem;
+    font-size: 1.5rem;
+}
+
+/* * Holder de contenido */
+.content-holder {
+    height: 100%;
+    width: 86%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

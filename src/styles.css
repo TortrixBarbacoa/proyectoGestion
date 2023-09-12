@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* * Contenedor principal */
+.main-holder {
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-app-holder {
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* * Holder de texto de registro */
+.alternative-link-holder {
+    width: 73%;
+    justify-content: end;
+    align-items: flex-end;
+    display: flex;  
+}
+
+/* * Estilo texto de registro */
+.alternative-link {
+    color: #737373;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+/* * Estilo del link para ir al registro */
+.alternative-link a {
+    text-decoration: none;
+    color: #004AAD;
+}
+
+/* Estilo del link para ir al registro al pasar el mouse por encima */
+.alternative-link a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
