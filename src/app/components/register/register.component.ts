@@ -24,7 +24,8 @@ export class RegisterComponent {
   ) { 
     this.formReg = new FormGroup({
       email: new FormControl(),
-      password: new FormControl()
+      password: new FormControl(),
+      confirmPassword: new FormControl()
     });
   }
 
@@ -43,7 +44,6 @@ export class RegisterComponent {
     this.userService.register(this.formReg.value)
       .then(response => {  
         console.log(response);
-        this.formReg.reset();
         this.router.navigate(['/login']);
       }) // Si el usuario se registra correctamente, se resetea el formulario y se redirige a la página de login
 
