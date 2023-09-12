@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router'; // <--- import Router
+import { FormControl, FormGroup } from '@angular/forms'; // <--- import FormControl, FormGroup
+import { UserService } from 'src/app/services/user.service'; // <--- import UserService
 
 @Component({
   selector: 'app-login',
@@ -11,10 +11,11 @@ import { UserService } from 'src/app/services/user.service';
 
 export class LoginComponent {
 
+  // * Declaración de variables
   formReg: FormGroup;
-  public errorFire = '';
+  public errorFire = ''; // Usada para mostrar mensaje de error en la vista
 
-
+  // * Constructor userService y Router
   constructor(
     private userService: UserService, 
     private router: Router
@@ -26,18 +27,19 @@ export class LoginComponent {
     });
   }
 
+  // * Método onSubmit para iniciar sesión
   onSubmit() {
     this.userService.login(this.formReg.value)
       .then(response => {  
         console.log(response);
         this.formReg.reset();
         this.router.navigate(['/home']);
-      })
+      }) // Si el usuario se loguea correctamente, se resetea el formulario y se redirige a la página de home
 
       .catch( (error) => {
         this.errorFire = error.message;
         this.formReg.reset();
-      } )
+      } ) // Si el usuario no se loguea correctamente, se resetea el formulario y se muestra un mensaje de error en la vista
   }
 
 }

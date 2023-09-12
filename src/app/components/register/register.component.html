@@ -4,35 +4,42 @@
     <!-- * Contenedor Card del Registro -->
 <div class="register-holder container-fluid">
 
+    <!-- Logo -->
     <div class="register-logo-holder">
         <img src="../../../assets/img/Login-Logo.png" class="img-fluid" alt="Logo">
     </div>
 
+    <!-- Formulario -->
     <form class="register-form-holder" [formGroup]="formReg" (ngSubmit)="onSubmit()">
         <h1>Registro</h1>
 
+        <!-- Input email -->
         <div class="input-form-holder">
             <h2>Email</h2>
             <input type="text" class="form-control input-style-register" value="emial" formControlName="email" placeholder="Ingresa tu correo electrónico">
         </div>
 
+        <!-- Input contraseña -->
         <div class="input-form-holder">
             <h2>Contraseña</h2>
             <input type="password" class="form-control input-style-register" value="pass" formControlName="password" placeholder="Ingresa tu contraseña">
         </div>
 
+        <!-- Input confirmar contraseña -->
         <div class="input-form-holder">
             <h2>Confirma tu contraseña</h2>
             <input type="password" class="form-control input-style-register" value="confirmPassword" formControlName="confirmPassword" placeholder="Confirma tu contraseña">
         </div>
 
-        
+        <!-- Imprimir error en la vista -->
         <h3> {{errorFire}} </h3>
 
+        <!-- Botón Registrar -->
         <button class="btn btn-register" type="submit" value="Enviar">
             <h1>Crear cuenta</h1>
         </button>
 
+        <!-- Link Login -->
         <div class="alternative-link-holder" style="margin-bottom: 7rem">
             <div class="alternative-link">
                 <p>¿Ya tienes cuenta? <a routerLink="/login">¡Inicia sesión aquí!</a></p>
@@ -40,6 +47,7 @@
         </div>
         
     </form>
+    
 </div>
 
 </div>

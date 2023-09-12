@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router'; // <--- import Router
+import { UserService } from 'src/app/services/user.service'; // <--- import UserService
 
 @Component({
   selector: 'app-main-app',
@@ -9,11 +9,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class MainAppComponent {
 
+  // * Constructor userService y Router
   constructor(
     private userService: UserService, 
     private router: Router
-    ){}
+    ){} 
   
+  // * Método logOut 
   logOut() {
     this.userService.logOut()
       .then(() => {
