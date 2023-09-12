@@ -1,0 +1,75 @@
+Completado:
+
+- Login (Vista y funcionamiento)
+- Registro (Vista y funcionamiento mínimo)
+- Vista Home Usuario (Vista, sin funcionamiento)
+- Componente Calculadora (Vista, sin funcionamiento)
+
+
+Pendiente:
+
+- General {
+|
+|	- Configurar ruteo // Elian //
+|	- Administrar base de datos // Javier y Aureliano //
+|
+}
+
+
+- Vista Usuario {
+|
+|	- Vistas {
+|	|
+|	|	- Componente detalles vista general // Ricardo //
+|	|	- Componente solicitar // Estefany //
+|	|	- Componente detalles detalle por préstamo (Modal) // Yarissa //
+|	|	- Componente editar perfil // Yarissa //
+|	|
+|	}
+|	
+|	- Funcionamiento {
+|	|
+|	|	- Registro de usuarios (Base de datos) // Javier y Aureliano //
+|	|	- Vista Home Usuario (Topbar, sidebar y conversión de moneda) // Elian //
+|	|	- Componente calculadora (Cálculos e imprimir resultados) // Mailo //
+|	|	- Componente detalles vista general (mostrar datos) // Mailo //
+|	|	- Componente detalles detalle por préstamo (mostrar datos por préstamo) // Mailo //
+|	|	- Componente solictar // Aureliano //
+|	|	- Componente editar perfil // Javi //
+|	|
+|	}
+|
+}
+
+
+- Vista Administrador {
+|
+|	- Vistas {
+|	|
+|	|	- Home Administrador // Elian //
+|	|	- Componente usuarios // Manuel //
+|	|	- Componente historial // Ricardo //
+|	|
+|	}
+|
+|	- Funcionamiento {
+|	|
+|	|	- Home Administrador // Mailo //
+|	|	- Componente usuarios // Aureliano //
+|	|	- Componente historial // Javi //
+|	|
+|	}
+|
+}
+
+
+- Extras (Opcionales) {
+|
+|	- Modo Oscuro // Ricardo //
+|	- Imagen Perfil // Elian //
+|	- Filtros en tablas // Aureliano y Ricardo //
+|	- Generar PDF (Muestra detalle de cuotas en formato PDF) // Yarissa //
+|	- Página error 404 // Estefany //
+|
+}
+
