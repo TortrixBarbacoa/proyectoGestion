@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+/*hola*/
 /* * Contenedor principal */
 .main-holder {
     background-color: #EBEBEB;
@@ -24,7 +24,7 @@
     width: 73%;
     justify-content: end;
     align-items: flex-end;
-    display: flex;  
+    display: flex;
 }
 
 /* * Estilo texto de registro */
