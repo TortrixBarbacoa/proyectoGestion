@@ -26,8 +26,8 @@ h3 {
 
 /* * Holder principal de la calculadora */
 .calc-main-holder {
-    height: 100%;
-    width: 100%;
+    height: 38rem;
+    width: 79rem;
     justify-content: center;
     align-items: center;
     display: flex;
