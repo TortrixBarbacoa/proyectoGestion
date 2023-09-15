@@ -36,28 +36,34 @@
 
             <!-- Elemento Calculadora -->
             <div class="side-element-holder container-fluid">
-                <div class="active-page-flag"></div>
-                <div class="side-element-holder-content active-true container-fluid">
+                <div [ngClass]="{'active-page-flag': homeSelected === true}"></div>
+                <div [ngClass]="{'active-true': homeSelected === true, 'active-false': homeSelected === false}" 
+                class="side-element-holder-content container-fluid"
+                (click)="clickHome()">
                     <i class="fa-solid fa-calculator side-icon-style"></i> 
-                    <h2>Calculadora</h2>
+                    <h2>Inicio</h2>
+                </div>
+            </div>
+
+            <!-- Elemento Solicitar -->
+            <div class="side-element-holder container-fluid">
+                <div [ngClass]="{'active-page-flag': calculoSelected === true}" ></div>
+                <div [ngClass]="{'active-true': calculoSelected === true, 'active-false': calculoSelected === false}" 
+                class="side-element-holder-content container-fluid"
+                (click)="clickSolicitar()">
+                <i class="fa-solid fa-file-invoice-dollar side-icon-style"></i> 
+                    <h2>Solicitud</h2>
                 </div>
             </div>
     
             <!-- Elemento Detalle -->
             <div class="side-element-holder container-fluid">
-                <!-- <div class="active-page-flag"></div> -->
-                <div class="side-element-holder-content active-false container-fluid">
-                    <i class="fa-solid fa-file-contract side-icon-style"></i> 
+                <div [ngClass]="{'active-page-flag': detalleSelected === true}"></div>
+                <div  [ngClass]="{'active-true': detalleSelected === true, 'active-false': detalleSelected === false}" 
+                class="side-element-holder-content container-fluid"
+                (click)="clickDetalle()">
+                    <i class="fa-solid fa-database side-icon-style"></i> 
                     <h2>Detalle</h2>
-                </div>
-            </div>
-    
-            <!-- Elemento Solicitar -->
-            <div class="side-element-holder container-fluid">
-                <!-- <div class="active-page-flag"></div> -->
-                <div class="side-element-holder-content active-false container-fluid">
-                    <i class="fa-solid fa-plus side-icon-style"></i> 
-                    <h2>Solicitar</h2>
                 </div>
             </div>
 
@@ -75,7 +81,13 @@
         <div class="content-holder">
 
             <!-- Componente de turno -->
-            <app-calc-view></app-calc-view> <!-- TODO: El componente deberá cambiar con el ruteo -->
+            <div *ngIf="homeSelected === true">
+                <app-calc-view></app-calc-view>
+            </div> <!-- TODO: El componente deberá cambiar con el ruteo -->
+
+            <div *ngIf="detalleSelected === true">
+                <app-detalles-view></app-detalles-view>
+            </div> 
             
         </div>
 

@@ -4,14 +4,7 @@ h1 {
     font-weight: 800; /* Peso de la fuente (negrita) */
     font-size: 2.2rem; /* Tamaño de fuente */
     color: #004AAD; /* Color de texto */
-    position: absolute; /* Posición absoluta en relación con su contenedor padre */
-    left: 2.5rem; /* Posición a la izquierda */
-    top: 0.8rem; /* Posición arriba */
-}
-
-/* Estilos para el contenedor de detalles */
-.detalles-holder {
-    position: relative; /* Posición relativa para alinear elementos hijos */
+    margin: none;
 }
 
 /* Estilos de texto para las celdas con clase .td1, .td2, .td3, .td4 */
@@ -29,9 +22,10 @@ h1 {
 }
 
 /* Estilos generales de la tabla de datos */
-.data-table {
-    margin-top: -1.5rem; /* Márgenes negativos para ajustar el espacio entre elementos */
-    width: 95%; /* Ancho de la tabla */
+.data-table { /* Márgenes negativos para ajustar el espacio entre elementos */
+    width: 100%;
+    height: 100%; /* Ancho de la tabla */
+    margin-bottom: 3rem;
     font-size: 1.2rem; /* Tamaño de fuente para la tabla */
     border-collapse: collapse; /* Colapsar bordes de celdas */
 }
@@ -44,8 +38,8 @@ h1 {
 
 /* Estilos para el contenedor principal de detalles */
 .detalles-main-holder {
-    height: 43rem; /* Altura del contenedor principal */
-    width: 79rem; /* Ancho del contenedor principal */
+    height: 100%; /* Altura del contenedor principal */
+    width: 100%; /* Ancho del contenedor principal */
     justify-content: center; /* Centrar elementos horizontalmente */
     align-items: center; /* Centrar elementos verticalmente */
     display: flex; /* Mostrar como flexbox */
@@ -57,43 +51,61 @@ h1 {
     margin-left: 2rem; /* Margen izquierdo */
     margin-right: 2rem; /* Margen derecho */
     border-radius: 2rem; /* Radio de borde para esquinas redondeadas */
-    height: 95%; /* Altura del contenedor */
+    height: 100%; /* Altura del contenedor */
     width: 100%; /* Ancho del contenedor */
     justify-content: center; /* Centrar elementos horizontalmente */
     align-items: center; /* Centrar elementos verticalmente */
     display: flex; /* Mostrar como flexbox */
     flex-direction: column; /* Dirección de los elementos (columna) */
-    background-color: rgb(255, 255, 255); /* Color de fondo del contenedor */
+    background-color: white; /* Color de fondo del contenedor */
+    padding-top: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.head-detalles-holder {
+    width: 70rem;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: none;
+    margin-bottom: 4rem;
 }
 
 /* Estilos para el contenedor de cambio Filtrar por Préstamo */
 .currency-change-holder {
-    justify-content: center; /* Centrar elementos horizontalmente */
+    justify-content: end; /* Centrar elementos horizontalmente */
     align-items: center; /* Centrar elementos verticalmente */
     display: flex; /* Mostrar como flexbox */
-    flex-direction: row; /* Dirección de los elementos (fila) */
-    width: 68%; /* Ancho del contenedor (ajusta según necesidades) */
-    height: 30%; /* Altura del contenedor */
-    margin-left: 24rem; /* Margen izquierdo (cambia a margin-right si es necesario) */
-    margin-top: -3.5rem; /* Margen superior */
+    flex-direction: row; /* Dirección de los elementos (fila)/ */
+    border-style: none;
+    width: 50%;
+    height: 2.5rem;
 }
 
 /* Estilos para el menú desplegable de cambio de Filtrar por Préstamo*/
 .currency-change {
-    width: 50%; /* Ancho del menú desplegable */
-    height: 60%; /* Altura del menú desplegable */
-    background-color: #004AAD; /* Color de fondo del menú desplegable */
+    width: 60%; /* Ancho del menú desplegable */
+    height: 100%; /* Altura del menú desplegable */ 
     border-radius: 0.4rem; /* Radio de borde para esquinas redondeadas */
     justify-content: center; /* Centrar elementos horizontalmente */
     align-items: center; /* Centrar elementos verticalmente */
     display: flex; /* Mostrar como flexbox */
     flex-direction: row; /* Dirección de los elementos (fila) */
     padding-left: 1rem; /* Espaciado izquierdo */
+    background-color: #004AAD;
+    color: white;
+    border: none;
 }
 
 /* Estilos de hover para el menú desplegable de cambio de Filtrar por Préstamo */
 .currency-change:hover {
     cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+}
+
+.currency-change:focus {
+    outline: none; /* Eliminar el contorno al hacer clic */
 }
 
 /* Estilos para elementos <select> (menús desplegables) */

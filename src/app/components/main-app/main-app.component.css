@@ -148,9 +148,9 @@ select {
 }
 
 /* * Indicador de activo true (Aplica al texto) */
-    .active-true {
-        color: white;
-    }
+.active-true {
+    color: white;
+}
 
 /* * Indicador de activo false (Aplica al texto) */
 .active-false {

@@ -1,26 +1,4 @@
-<!-- * Vista General Componente detalles-view -->
-<div class="detalles-main-holder container-fluid">
-    <div class="detalles-holder container-fluid">
-        <div class="head-detalles-holder container-fluid">
-            <h1 style="width: 50%">Vista General</h1>
-
-            <!-- Cambio de Moneda -->
-            <div class="currency-change-holder">
-
-                <!-- Select de las monedas -->
-                <select class="currency-change" name="currency" id="currency">
-                    <option value="detlle">Filtrar por préstamo</option>
-                    <option>Préstamo1</option>
-                    <option>Préstamo2</option>
-                    <option>Etc..-</option>
-                </select> <!-- TODO: Las variables están quemadas, aplicar función y variables -->
-
-                <i class="fa-solid fa-chevron-down" style="margin-left: -2.5rem; color: white;"></i>
-
-            </div>
-        </div>
-
-        <!-- Tabla de datos -->
+<!-- Tabla de datos -->
         <table class="data-table">
             <thead>
                 <tr>
@@ -81,7 +59,6 @@
                     <td>18</td>
                 </tr>
             </tbody>
-            
         </table>
 
         <!-- Botón para generar un PDF -->
@@ -89,6 +66,3 @@
             <span>GENERAR PDF</span>
             <i class="fa-regular fa-file-pdf"></i>
         </button>
-    </div>
-</div>
-

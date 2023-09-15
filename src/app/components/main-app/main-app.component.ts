@@ -9,6 +9,10 @@ import { UserService } from 'src/app/services/user.service'; // <--- import User
 })
 export class MainAppComponent {
 
+  homeSelected: boolean = false;
+  calculoSelected: boolean = false;
+  detalleSelected: boolean = true;
+  
   // * Constructor userService y Router
   constructor(
     private userService: UserService, 
@@ -24,5 +28,23 @@ export class MainAppComponent {
       .catch((error) => {
         console.log(error);
       })
+  }
+
+  clickHome() {
+    this.homeSelected = true;
+    this.detalleSelected = false;
+    this.calculoSelected = false;
+  }
+
+  clickDetalle() {
+    this.homeSelected = false;
+    this.detalleSelected = true;
+    this.calculoSelected = false;
+  }
+
+  clickSolicitar() {
+    this.homeSelected = false;
+    this.detalleSelected = false;
+    this.calculoSelected = true;
   }
 }
