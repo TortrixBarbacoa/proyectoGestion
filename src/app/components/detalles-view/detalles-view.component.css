@@ -1,0 +1,192 @@
+/* Estilos de Letra para los encabezados */
+h1 {
+    font-family: 'Poppins', sans-serif; /* Fuente de letra */
+    font-weight: 800; /* Peso de la fuente (negrita) */
+    font-size: 2.2rem; /* Tamaño de fuente */
+    color: #004AAD; /* Color de texto */
+    position: absolute; /* Posición absoluta en relación con su contenedor padre */
+    left: 2.5rem; /* Posición a la izquierda */
+    top: 0.8rem; /* Posición arriba */
+}
+
+/* Estilos para el contenedor de detalles */
+.detalles-holder {
+    position: relative; /* Posición relativa para alinear elementos hijos */
+}
+
+/* Estilos de texto para las celdas con clase .td1, .td2, .td3, .td4 */
+.td1 {
+    color: #004AAD; /* Color de texto para .td1 */
+}
+.td2 {
+    color: #FF5757; /* Color de texto para .td2 */
+}
+.td3 {
+    color: #7ED957; /* Color de texto para .td3 */
+}
+.td4 {
+    color: #FFDE59; /* Color de texto para .td4 */
+}
+
+/* Estilos generales de la tabla de datos */
+.data-table {
+    margin-top: -1.5rem; /* Márgenes negativos para ajustar el espacio entre elementos */
+    width: 95%; /* Ancho de la tabla */
+    font-size: 1.2rem; /* Tamaño de fuente para la tabla */
+    border-collapse: collapse; /* Colapsar bordes de celdas */
+}
+
+/* Estilos para encabezados y celdas de la tabla */
+.data-table th, .data-table td {
+    padding: 18px; /* Espaciado interno de celdas */
+    text-align: left; /* Alineación de texto a la izquierda */
+}
+
+/* Estilos para el contenedor principal de detalles */
+.detalles-main-holder {
+    height: 43rem; /* Altura del contenedor principal */
+    width: 79rem; /* Ancho del contenedor principal */
+    justify-content: center; /* Centrar elementos horizontalmente */
+    align-items: center; /* Centrar elementos verticalmente */
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: row; /* Dirección de los elementos (fila) */
+}
+
+/* Estilos para el contenedor de Filtrar por Préstamo */
+.detalles-holder {
+    margin-left: 2rem; /* Margen izquierdo */
+    margin-right: 2rem; /* Margen derecho */
+    border-radius: 2rem; /* Radio de borde para esquinas redondeadas */
+    height: 95%; /* Altura del contenedor */
+    width: 100%; /* Ancho del contenedor */
+    justify-content: center; /* Centrar elementos horizontalmente */
+    align-items: center; /* Centrar elementos verticalmente */
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: column; /* Dirección de los elementos (columna) */
+    background-color: rgb(255, 255, 255); /* Color de fondo del contenedor */
+}
+
+/* Estilos para el contenedor de cambio Filtrar por Préstamo */
+.currency-change-holder {
+    justify-content: center; /* Centrar elementos horizontalmente */
+    align-items: center; /* Centrar elementos verticalmente */
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: row; /* Dirección de los elementos (fila) */
+    width: 68%; /* Ancho del contenedor (ajusta según necesidades) */
+    height: 30%; /* Altura del contenedor */
+    margin-left: 24rem; /* Margen izquierdo (cambia a margin-right si es necesario) */
+    margin-top: -3.5rem; /* Margen superior */
+}
+
+/* Estilos para el menú desplegable de cambio de Filtrar por Préstamo*/
+.currency-change {
+    width: 50%; /* Ancho del menú desplegable */
+    height: 60%; /* Altura del menú desplegable */
+    background-color: #004AAD; /* Color de fondo del menú desplegable */
+    border-radius: 0.4rem; /* Radio de borde para esquinas redondeadas */
+    justify-content: center; /* Centrar elementos horizontalmente */
+    align-items: center; /* Centrar elementos verticalmente */
+    display: flex; /* Mostrar como flexbox */
+    flex-direction: row; /* Dirección de los elementos (fila) */
+    padding-left: 1rem; /* Espaciado izquierdo */
+}
+
+/* Estilos de hover para el menú desplegable de cambio de Filtrar por Préstamo */
+.currency-change:hover {
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+}
+
+/* Estilos para elementos <select> (menús desplegables) */
+select {
+    color: white; /* Color de texto */
+    appearance: none; /* Eliminar estilos nativos del navegador */
+    font-family: 'Poppins', sans-serif; /* Fuente de letra */
+    font-weight: 700; /* Peso de la fuente */
+    font-size: 1rem; /* Tamaño de fuente */
+}
+
+/* Estilos básicos para botones */
+.btn {
+    border: none; /* Eliminar bordes */
+}
+
+/* Estilos para el botón "GENERAR PDF" */
+.boton-agregar {
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #393939; /* Color de fondo del botón */
+    color: #fff; /* Color de texto */
+    border: none; /* Eliminar bordes */
+    border-radius: 5px; /* Radio de borde para esquinas redondeadas */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    left: 2.5rem; /* Posición a la izquierda */
+    position: absolute; /* Posición absoluta en relación con su contenedor padre */
+    top: 36.5rem; /* Posición superior */
+    font-size: 1rem; /* Tamaño de fuente del botón */
+}
+
+/* Estilos para el botón "GENERAR PDF" al pasar el mouse */
+.boton-agregar:hover {
+    background-color: #000000; /* Cambiar el color de fondo al pasar el mouse */
+}
+
+/* Estilos para el ícono del carrito dentro del botón */
+.boton-agregar i {
+    margin-left: 5px; /* Espacio entre el texto y el ícono */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 1rem; /* Ancho total del contenedor */
+}
+
+.box {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para los recuadros */
+.color-box {
+    width: 1.5rem; /* Ancho del cuadro de color */
+    height: 1.3rem; /* Alto del cuadro de color */
+    background-color: #004AAD; /* Cambia el color de fondo aquí */
+    margin-left: 10px;
+    margin-right: 10px; /* Espacio entre el cuadro de color y el texto */
+    /* Puedes ajustar otros estilos de color según tus preferencias */
+}
+
+.color-box1 {
+    width: 1.5rem; /* Ancho del cuadro de color */
+    height: 1.3rem; /* Alto del cuadro de color */
+    background-color: #FFDE59; /* Cambia el color de fondo aquí */
+    margin-left: 10px;
+    margin-right: 10px; /* Espacio entre el cuadro de color y el texto */
+    /* Puedes ajustar otros estilos de color según tus preferencias */
+}
+
+.color-box2 {
+    width: 1.5rem; /* Ancho del cuadro de color */
+    height: 1.3rem; /* Alto del cuadro de color */
+    background-color: #FF5757; /* Cambia el color de fondo aquí */
+    margin-left: 10px;
+    margin-right: 10px; /* Espacio entre el cuadro de color y el texto */
+    /* Puedes ajustar otros estilos de color según tus preferencias */
+}
+
+.color-box3 {
+    width: 1.5rem; /* Ancho del cuadro de color */
+    height: 1.3rem; /* Alto del cuadro de color */
+    background-color: #7ED957; /* Cambia el color de fondo aquí */
+    margin-left: 10px;
+    margin-right: 10px; /* Espacio entre el cuadro de color y el texto */
+    /* Puedes ajustar otros estilos de color según tus preferencias */
+}
+
+.text {
+    flex-grow: 1; /* El texto ocupará todo el espacio restante en el contenedor */
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se ajuste */
+}

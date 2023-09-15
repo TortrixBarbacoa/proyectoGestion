@@ -1,3 +1,119 @@
-<div class="detalles-view-holder container-fluid">
-    
+<!-- * Vista General Componente detalles-view -->
+<div class="detalles-main-holder container-fluid">
+    <!-- * detalles-view -->
+    <div class="detalles-holder container-fluid">
+        <h1>Vista General</h1>
+        
+        <!-- Contenedor para el cambio de moneda -->
+        <div class="currency-change-holder">
+        
+            <!-- Cambio de Moneda -->
+            <div class="currency-change-holder">
+            
+                <!-- Select de las monedas -->
+                <select class="currency-change" name="currency" id="currency">
+                    <option value="gtq">Filtrar por Préstamo</option>
+                    <option value="eur">EUR</option>
+                    <option value="usd">USD</option>
+                </select> <!-- TODO: Las variables están quemadas, aplicar función y variables -->
+                
+                <!-- Icono de flecha hacia abajo con estilo personalizado -->
+                <i class="fa-solid fa-chevron-down" style="margin-left: -1.8rem; color: white;"></i>
+            </div>
+        </div>
+        
+        <!-- Tabla de datos -->
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Detalle</th>
+                    <th>Acreedor</th>
+                    <th>Total del Préstamo</th>
+                    <th>% Interés</th>
+                    <th>Número de Cuotas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Fila de datos 1 -->
+                <tr>
+                    <td class="td1">PresMiCasita</td>
+                    <td>Banrural</td>
+                    <td>Q.120,000.00</td>
+                    <td>5%</td>
+                    <td>48</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <!-- Fila de datos 2 -->
+                <tr>
+                    <td class="td1">CredSwitch</td>
+                    <td>LaCuracao</td>
+                    <td>Q.5,000.00</td>
+                    <td>0.5%</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <!-- Fila de datos 3 -->
+                <tr>
+                    <td class="td2">CredMAX</td>
+                    <td>Grupo Distelsa</td>
+                    <td>Q.3,000.00</td>
+                    <td>0.3%</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <!-- Fila de datos 4 -->
+                <tr>
+                    <td class="td3">CredSwitch</td>
+                    <td>LaCuracao</td>
+                    <td>Q.5,000.00</td>
+                    <td>0.5%</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <!-- Fila de datos 5 -->
+                <tr>
+                    <td class="td4">LeClbNoche</td>
+                    <td>LeClubLtd</td>
+                    <td>Q.10,000.00</td>
+                    <td>Sin Interés</td>
+                    <td>18</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Botón para generar un PDF -->
+        <button type="submit" class="boton-agregar">
+            <span>GENERAR PDF</span>
+            <i class="fa-regular fa-file-pdf"></i>
+        </button>
+        
+        <!-- Contenedor de cajas de estado -->
+        <div class="container">
+            <!-- Caja de estado Activo -->
+            <div class="box">
+                <div class="color-box"></div>
+                <div class="text">Activo</div>
+            </div>
+            <!-- Caja de estado Pendiente de Autorización -->
+            <div class="box">
+                <div class="color-box1"></div>
+                <div class="text">Pendiente de Autorización</div>
+            </div>
+            <!-- Caja de estado No Autorizado -->
+            <div class="box">
+                <div class="color-box2"></div>
+                <div class="text">No Autorizado</div>
+            </div>
+            <!-- Caja de estado Saldado -->
+            <div class="box">
+                <div class="color-box3"></div>
+                <div class="text">Saldado</div>
+            </div>
+        </div>
+    </div>
 </div>
+
