@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./calc-view.component.css']
 })
 export class CalcViewComponent {
-
+  titulo: string = 'Calculadora de Intereses';
 }
