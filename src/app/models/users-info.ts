@@ -5,6 +5,4 @@ export interface ProfileUser {
     lastName?: string;
     displayName?: string;
     phone?: string;
-    address?: string;
-    photoURL?: string;
 }
