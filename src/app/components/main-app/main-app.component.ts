@@ -9,9 +9,9 @@ import { UserService } from 'src/app/services/user.service'; // <--- import User
 })
 export class MainAppComponent {
 
-  homeSelected: boolean = false;
+  homeSelected: boolean = true;
   calculoSelected: boolean = false;
-  detalleSelected: boolean = true;
+  detalleSelected: boolean = false;
   
   // * Constructor userService y Router
   constructor(
