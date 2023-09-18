@@ -13,22 +13,47 @@
     <form class="register-form-holder" [formGroup]="formReg" (ngSubmit)="onSubmit()">
         <h1>Registro</h1>
 
+        <div class="input-group-row"> 
+            <div class="input-form-holder">
+                <h2>Email</h2>
+                <input type="text" class="form-control input-style-register" formControlName="email" placeholder="Ingresa tu correo electrónico">
+            </div>
+
+            <div class="input-form-holder">
+                <h2>Nombre</h2>
+                <input type="text" class="form-control input-style-register" value="" formControlName="name" placeholder="Ingresa tu nombre">
+            </div>
+        </div>
         <!-- Input email -->
-        <div class="input-form-holder">
-            <h2>Email</h2>
-            <input type="text" class="form-control input-style-register" value="emial" formControlName="email" placeholder="Ingresa tu correo electrónico">
+
+        <div class="input-group-row">
+            
+            <!-- Input contraseña -->
+            <div class="input-form-holder">
+                <h2>Contraseña</h2>
+                <input type="password" class="form-control input-style-register" value="pass" formControlName="password" placeholder="Ingresa tu contraseña">
+            </div>
+
+            <div class="input-form-holder">
+                <h2>Apellido</h2>
+                <input type="text" class="form-control input-style-register" value="" formControlName="lastName" placeholder="Ingresa tu apellido">
+            </div>
+
         </div>
 
-        <!-- Input contraseña -->
-        <div class="input-form-holder">
-            <h2>Contraseña</h2>
-            <input type="password" class="form-control input-style-register" value="pass" formControlName="password" placeholder="Ingresa tu contraseña">
-        </div>
+        <div class="input-group-row">
 
-        <!-- Input confirmar contraseña -->
-        <div class="input-form-holder">
-            <h2>Confirma tu contraseña</h2>
-            <input type="password" class="form-control input-style-register" value="confirmPassword" formControlName="confirmPassword" placeholder="Confirma tu contraseña">
+            <!-- Input confirmar contraseña -->
+            <div class="input-form-holder">
+                <h2>Confirma tu contraseña</h2>
+                <input type="password" class="form-control input-style-register" value="confirmPassword" formControlName="confirmPassword" placeholder="Confirma tu contraseña">
+            </div>
+
+            <div class="input-form-holder">
+                <h2>Número de Teléfono</h2>
+                <input type="text" class="form-control input-style-register" value="" formControlName="phoneNum" placeholder="Ingresa tu número de teléfono">
+            </div>
+
         </div>
 
         <!-- Imprimir error en la vista -->

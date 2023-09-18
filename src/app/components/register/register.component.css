@@ -32,7 +32,7 @@ h3 {
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    width: 40%;
+    width: 80%;
     height: 90%;
 }
 
@@ -62,7 +62,15 @@ h3 {
     align-items: start;
     flex-direction: column;
     text-align: start;
-    width: 70%;
+    width: 45%;
+}
+
+.input-group-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
 }
 
 .input-style-register {
