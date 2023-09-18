@@ -1,8 +1,11 @@
 import { ParseSourceFile } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms'; // <--- import FormControl, FormGroup
-import { UserService } from 'src/app/services/user.service'; // <--- import UserService
+import { UserRegister } from 'src/app/services/user.service'; // <--- import UserService
+import { UserProfileInfoService } from 'src/app/services/user-profile-info.service';
 import { Router } from '@angular/router'; // <--- import Router
+import { switchMap } from 'rxjs/operators';
+import { UserCredential } from 'firebase/auth';
 
 
 @Component({
@@ -19,14 +22,38 @@ export class RegisterComponent {
 
   // * Constructor userService y Router
   constructor(
-    private userService: UserService, 
-    private router: Router
+    private userService: UserRegister, 
+    private router: Router,
+    private userProfileInfo: UserProfileInfoService,
   ) { 
     this.formReg = new FormGroup({
+      name: new FormControl(),
+      lastName: new FormControl(),
       email: new FormControl(),
       password: new FormControl(),
-      confirmPassword: new FormControl()
+      confirmPassword: new FormControl(),
+      phoneNum: new FormControl(),
     });
+  }
+
+  get email (){
+    return this.formReg.get('email');
+  }
+
+  get password (){
+    return this.formReg.get('password');
+  }
+
+  get name (){
+    return this.formReg.get('name');
+  }
+
+  get lastName (){
+    return this.formReg.get('lastName');
+  }
+
+  get phoneNum (){
+    return this.formReg.get('phoneNum');
   }
 
   // * Método onSubmit para validar si las contraseñas coinciden
@@ -39,17 +66,26 @@ export class RegisterComponent {
     }
   }
 
-  // * Método registerSuccess para registrar usuario (Se ejecuta si las contraseñas coinciden)
   registerSuccess() {
-    this.userService.register(this.formReg.value)
-      .then(response => {  
-        console.log(response);
-        this.router.navigate(['/login']);
-      }) // Si el usuario se registra correctamente, se resetea el formulario y se redirige a la página de login
 
-      .catch( (error) => {
-        this.errorFire = error.message;
-        this.formReg.reset();
-      } ) // Si el usuario no se registra correctamente, se resetea el formulario y se muestra un mensaje de error en la vista
-  }
+    const { email, password, name, lastName, phoneNum } = this.formReg.value;
+    if (!this.formReg.valid || !name || !password || !email || !lastName || !phoneNum) {
+      return;
+    }
+
+    this.userService
+    .register({ email, password })
+    .then((userCredential: UserCredential) => {
+      const { user: { uid } } = userCredential;
+      return this.userProfileInfo.addUser({ uid, email, firstName: name, lastName, phone: phoneNum });
+    })
+    .then(() => {
+      this.router.navigate(['/home']);
+    })
+    .catch((error) => {
+    // Handle any errors during registration
+    console.error('Registration failed:', error);
+  });
+}
+  
 }

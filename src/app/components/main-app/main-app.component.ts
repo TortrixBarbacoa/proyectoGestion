@@ -1,6 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // <--- import Router
-import { UserService } from 'src/app/services/user.service'; // <--- import UserService
+import { UserRegister } from 'src/app/services/user.service'; // <--- import UserService
+import { UserProfileInfoService } from 'src/app/services/user-profile-info.service';
+import { FormControl, FormGroup } from '@angular/forms'; // <--- import FormControl, FormGroup
+import { usersInfo } from 'src/app/models/users-info';
+import { switchMap, tap } from 'rxjs';
+import { user } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-main-app',
@@ -9,16 +14,22 @@ import { UserService } from 'src/app/services/user.service'; // <--- import User
 })
 export class MainAppComponent {
 
+  user$ = this.userInfo.currentUserProfileInfo$;
+
   homeSelected: boolean = true;
   calculoSelected: boolean = false;
   detalleSelected: boolean = false;
   
   // * Constructor userService y Router
   constructor(
-    private userService: UserService, 
-    private router: Router
+    private userInfo: UserProfileInfoService,
+    private userService: UserRegister, 
+    private router: Router,
     ){} 
   
+  ngOnInit(): void {
+    console.log(this.user$);
+  }
   // * Método logOut 
   logOut() {
     this.userService.logOut()

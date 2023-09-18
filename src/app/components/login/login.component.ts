@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // <--- import Router
 import { FormControl, FormGroup } from '@angular/forms'; // <--- import FormControl, FormGroup
-import { UserService } from 'src/app/services/user.service'; // <--- import UserService
+import { UserRegister } from 'src/app/services/user.service'; // <--- import UserService
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent {
 
   // * Constructor userService y Router
   constructor(
-    private userService: UserService, 
+    private userService: UserRegister, 
     private router: Router
   ) { 
     this.formReg = new FormGroup({
