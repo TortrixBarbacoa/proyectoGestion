@@ -25,6 +25,7 @@ export class RegisterComponent {
     private userService: UserRegister, 
     private router: Router,
     private userProfileInfo: UserProfileInfoService,
+    
   ) { 
     this.formReg = new FormGroup({
       name: new FormControl(),

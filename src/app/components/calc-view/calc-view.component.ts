@@ -14,7 +14,10 @@ export class CalcViewComponent {
   formCalc: FormGroup;
   public errorFire = '';
   titulo: string = 'Calculadora de Intereses';
-
+  cuotaM: number = 0;  
+  interes: number=0;
+  cuotas: number=0;
+  total: number=0;
   constructor(
     private userService: UserRegister,
     private router: Router,
@@ -31,16 +34,18 @@ export class CalcViewComponent {
 calcular() {
   // Se obtienen los valores del formulario
   const capital = this.formCalc.get('Capital')?.value;
-  const cuotas = this.formCalc.get('Cuotas')?.value;
+  this.cuotas = this.formCalc.get('Cuotas')?.value;
   const tasa = this.formCalc.get('Tasa')?.value;
 
   // Calculo del interés simple
-  const interes = capital*(tasa/ 100)*cuotas;
+  this.interes= capital/this.cuotas*tasa/100;
 
-  // Imprime los valores en la consola
-  console.log('Capital:', capital);
-  console.log('Cuotas:', cuotas);
-  console.log('Tasa de Interés:', tasa);
-  console.log('Interés:', interes);
+  this.cuotaM= capital/this.cuotas;
+  this.total=this.interes + this.cuotaM;
+
+  // Redondear a dos decimales
+  this.interes = Math.round(this.interes * 100) / 100;
+  this.total = Math.round(this.total * 100) / 100;
+  this.cuotaM = Math.round(this.cuotaM * 100) / 100;
 }
 }
