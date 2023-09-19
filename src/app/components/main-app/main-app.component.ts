@@ -13,7 +13,7 @@ import { user } from '@angular/fire/auth';
   styleUrls: ['./main-app.component.css']
 })
 export class MainAppComponent {
-  fullName:any;
+  fullName: any;
   user$ = this.userInfo.currentUserProfileInfo$;
 
   homeSelected: boolean = true;
