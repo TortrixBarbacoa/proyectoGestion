@@ -202,3 +202,31 @@ select {
     text-align: center;
     white-space: nowrap; /* Evita que el texto se ajuste */
 }
+
+/* Estilo del contenedor de la barra de búsqueda */
+.search-bar {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo del campo de búsqueda */
+  .search-bar input[type="text"] {
+    width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    outline: none;
+    flex-grow: 1; /* Hace que el campo de búsqueda ocupe todo el espacio disponible */
+  }
+  
+  /* Estilo del ícono de lupa */
+  .search-bar i {
+    margin-left: 0.5rem; /* Espacio entre el campo de búsqueda y el ícono */
+    font-size: 1rem; /* Tamaño del ícono */
+    color: #004AAD; /* Color del ícono (puedes ajustarlo) */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+  }
+  
+  
