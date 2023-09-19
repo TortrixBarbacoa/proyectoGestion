@@ -1,7 +1,7 @@
 h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 1000;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #004AAD;
     margin: 0;
 }
@@ -9,7 +9,7 @@ h1 {
 h2 {
     font-family: 'Lato', sans-serif;
     font-weight: 600;
-    font-size: 2.3rem;
+    font-size: 1.8rem;
     color: #004AAD;
     margin: 0;
 }
@@ -35,7 +35,7 @@ h3 {
     margin-left: 2rem;
     margin-right: 2rem;
     border-radius: 2rem;
-    height: 95%;
+    height: 80%;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -57,6 +57,7 @@ h3 {
 
 .input-group {
     margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
     width: 95%;
     justify-content: space-between;
     align-items: center;
@@ -75,7 +76,7 @@ h3 {
 .input-style-sol {
     width: 100%;
     align-self: center;
-    height: 6rem;
+    height: 4rem;
     border-radius: 0.3rem;
     border: none;
     background-color: #EBEBEB;
@@ -145,7 +146,7 @@ h3 {
 .input-style-calc-number {
     width: 100%;
     align-self: center;
-    height: 5.5rem;
+    height: 4rem;
     border-radius: 0.3rem;
     border: none;
     background-color: #EBEBEB;
@@ -155,5 +156,4 @@ h3 {
     font-family: 'Lato', sans-serif;
     font-size: 1.3rem;
     font-weight: 200;
-    padding-left: 1rem;
 }
