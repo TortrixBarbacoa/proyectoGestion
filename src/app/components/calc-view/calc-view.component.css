@@ -169,3 +169,10 @@ select {
     margin: 0.7rem;
     color: white;
 }
+
+.history-button {
+    justify-self: start;
+    align-self: start;
+    margin-left: 1rem;
+    font-size: 2rem;
+}
