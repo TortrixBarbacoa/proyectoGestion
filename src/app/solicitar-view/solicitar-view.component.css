@@ -103,7 +103,7 @@ h3 {
     margin-top: -2rem;
     margin-bottom: 1.5rem;
     margin-right: 3rem;
-    margin-left: 2rem;
+    margin-left: 3rem;
     width: 100%;
     justify-content: start;
     align-items: start;
@@ -125,9 +125,8 @@ h3 {
 
 /* * Estilo del botón de calcular */
 .btn-calc {
-    margin-top: -0.5rem;
-    width: 105%;
-    height: 70%;
+    width: 50%;
+    height: 5rem;
     border-radius: 0.3rem;
     border: none;
     color: white;
@@ -144,7 +143,7 @@ h3 {
 
 /* * Input Cuotas */
 .input-style-calc-number {
-    width: 100%;
+    width: 110%;
     align-self: center;
     height: 4rem;
     border-radius: 0.3rem;
@@ -156,4 +155,5 @@ h3 {
     font-family: 'Lato', sans-serif;
     font-size: 1.3rem;
     font-weight: 200;
+    margin-left: 1rem;
 }
