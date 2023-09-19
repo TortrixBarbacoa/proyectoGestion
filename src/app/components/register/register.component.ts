@@ -87,5 +87,7 @@ export class RegisterComponent {
     console.error('Registration failed:', error);
   });
 }
+
+
   
 }

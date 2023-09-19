@@ -13,7 +13,7 @@ import { user } from '@angular/fire/auth';
   styleUrls: ['./main-app.component.css']
 })
 export class MainAppComponent {
-
+  fullName:any;
   user$ = this.userInfo.currentUserProfileInfo$;
 
   homeSelected: boolean = true;
@@ -27,9 +27,14 @@ export class MainAppComponent {
     private router: Router,
     ){} 
   
-  ngOnInit(): void {
-    console.log(this.user$);
-  }
+
+    ngOnInit(): void {
+      // Llama al servicio para obtener el fullName y asignarlo a la propiedad
+      this.userService.getAuthenticatedUserName().then((fullName) => {
+        this.fullName = fullName;
+      });
+    }
+    
   // * Método logOut 
   logOut() {
     this.userService.logOut()

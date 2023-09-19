@@ -29,4 +29,6 @@ export class UserProfileInfoService {
     const ref = doc(this.firestore, 'users', user.uid);
     return from(setDoc(ref, user));
   }
+
+  
 }

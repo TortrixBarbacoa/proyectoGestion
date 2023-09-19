@@ -28,6 +28,7 @@ import { DetallesViewComponent } from './components/detalles-view/detalles-view.
     DetallesViewComponent,
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -37,9 +38,11 @@ import { DetallesViewComponent } from './components/detalles-view/detalles-view.
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
