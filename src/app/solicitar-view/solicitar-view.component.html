@@ -1,14 +1,14 @@
 <div class="request-main-holder container-fluid">
 
     <div class="request-holder container-fluid">
-        <h1 style="margin-top: 2.5rem;">Cálculo Detallado</h1>
+        <h1 style="margin-top: 1rem;">Cálculo Detallado</h1>
 
         <form class="form-holder">
 
             <div class="input-group">
                 <div class="input-holder">
                     <h2>Alias</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="Alias">
+                    <input type="text" class="form-control input-style-sol" placeholder="No Mayor a 10 Letras">
                 </div>
                 <div class="input-holder">
                     <h2>Total con Interés</h2>
@@ -18,15 +18,56 @@
 
             <div class="input-group">
                 <div class="input-holder">
-                    <h2>Alias</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="Alias">
+                    <h2>Cantidad a Solicitar</h2>
+                    <input type="text" class="form-control input-style-sol" placeholder="Cantidad">
+                
                 </div>
                 <div class="input-holder">
-                    <h2>Alias</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="Alias">
+                    <h2>Cuotas Con Interéses</h2>
+                    <input type="text" class="form-control input-style-sol" placeholder="Automático">
                 </div>
             </div>
 
+            <div class="input-group">
+                <div class="input-holder">
+                    <h2>Acreedor Autorizado</h2>
+                    <select class="input-style-calc-number" name="monthly" id="monthly">
+                        <option value="default" selected disabled>Seleccionar</option>
+                        <option value="Banco Industrial">Banco Industrial</option>
+                        <option value="G&T Continental">G&T Continental</option>
+                        <option value="Banrural">Banrural</option>
+                    </select>
+                </div>
+            <div class="input-holder">
+                    <h2>Interés</h2>
+                    <input type="text" class="form-control input-style-sol" placeholder="Auto %">
+                </div>
+            </div>
+
+            <div class="input-group1">
+                <div class="input-holder1">
+                    <h2>Cantidad De Cuotas</h2>
+                    <select class="input-style-calc-number" name="monthly" id="monthly">
+                        <option value="default" selected disabled>Seleccionar</option>
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                        <option value="12">12</option>
+                        <option value="18">18</option>
+                        <option value="24">24</option>
+                        <option value="36">36</option>
+                        <option value="48">48</option>
+                        <option value="60">60</option>
+                        <option value="72">72</option>
+                        <option value="84">84</option>
+                        <option value="96">96</option>
+                        <option value="108">108</option>
+                        <option value="120">120</option>
+                    </select>
+                </div>
+                <button class="btn btn-calc">
+                    <h3>SOLICITAR PRÉSTAMO</h3>
+                </button>
+            </div>
         </form>
     </div>
 
