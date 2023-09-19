@@ -28,6 +28,17 @@ export class CalcViewComponent {
       Cuotas: new FormControl(),
       Tasa: new FormControl(),
     });
+  
+    // Verificar si existen datos en localStorage y cargarlos si es necesario
+    const savedInteres = localStorage.getItem('interes');
+    const savedCuotaM = localStorage.getItem('cuotaM');
+    const savedTotal = localStorage.getItem('total');
+  
+    if (savedInteres && savedCuotaM && savedTotal) {
+      this.interes = parseFloat(savedInteres);
+      this.cuotaM = parseFloat(savedCuotaM);
+      this.total = parseFloat(savedTotal);
+    }
   }
 
 // Funcion que calcula el interes simple
@@ -49,5 +60,10 @@ calcular() {
   this.interes = Math.round(this.interes * 100) / 100;
   this.total = Math.round(this.total * 100) / 100;
   this.cuotaM = Math.round(this.cuotaM * 100) / 100;
+
+    // Guardar los datos en localStorage
+    localStorage.setItem('interes', this.interes.toString());
+    localStorage.setItem('cuotaM', this.cuotaM.toString());
+    localStorage.setItem('total', this.total.toString());
 }
 }
