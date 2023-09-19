@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { DetallesViewComponent } from './components/detalles-view/detalles-view.component';
+import { SolicitarViewComponent } from './solicitar-view/solicitar-view.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DetallesViewComponent } from './components/detalles-view/detalles-view.
     MainAppComponent,
     CalcViewComponent,
     DetallesViewComponent,
+    SolicitarViewComponent,
   ],
   imports: [
     

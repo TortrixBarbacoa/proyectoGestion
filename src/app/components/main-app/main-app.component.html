@@ -52,7 +52,7 @@
                 class="side-element-holder-content container-fluid"
                 (click)="clickSolicitar()">
                 <i class="fa-solid fa-file-invoice-dollar side-icon-style"></i> 
-                    <h2>Solicitud</h2>
+                    <h2>Cálculo Detallado</h2>
                 </div>
             </div>
     
@@ -88,6 +88,9 @@
             <div *ngIf="detalleSelected === true">
                 <app-detalles-view></app-detalles-view>
             </div> 
+
+            <div *ngIf="calculoSelected === true">
+                <app-solicitar-view></app-solicitar-view>
             
         </div>
 
