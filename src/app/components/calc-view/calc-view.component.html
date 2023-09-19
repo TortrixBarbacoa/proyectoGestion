@@ -3,19 +3,19 @@
 <div class="calc-main-holder container-fluid">
 
     <!-- * Calculadora -->
-    <div class="calc-holder container-fluid">
+    <form class="calc-holder container-fluid" [formGroup]="formCalc">
 
         <!-- Título -->
         <h1>{{titulo | uppercase }}</h1>
 
         <!-- Input Capital -->
-        <form class="input-form-holder" [formGroup]="formCalc" >
+        <div class="input-form-holder" >
             <input type="number" min="0" class="form-control input-style-calc" formControlName="Capital" placeholder="Capital Inicial">
+        </div>
         
         <!-- Input Cuotas -->
         <div class="input-form-holder" >
             <select class="input-style-calc-number" formControlName="Cuotas" name="monthly" id="monthly">
-                <option value="default" selected disabled>Periodo en Meses o Cuotas </option>
                 <option value="3">3</option>
                 <option value="6">6</option>
                 <option value="12">12</option>
@@ -41,10 +41,9 @@
 
         <!-- Botón Calcular con evento (click) -->
         <button class="btn btn-calc" type="button" (click)="calcular()">
-        <h1>Calcular</h1>
+            <h1>Calcular</h1>
         </button>
     </form>
-    </div>
 
     <!-- * Información -->
     <div class="info-holder container-fluid">
