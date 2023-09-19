@@ -39,6 +39,7 @@ export class UserRegister {
 
   // Función logOut para cerrar sesión
   logOut() {
+    console.clear(); // Limpia la consola
     return signOut(this.auth);
   }
 
@@ -169,12 +170,13 @@ getAllUsersInfo(): Promise<any | null>{
           };
         }
         resolve( objectAllinfoUsers);
-        console.log(objectAllinfoUsers);
+        
       }catch(error){
         reject(error);
       }
     }
   });
 }
+
 
 }
