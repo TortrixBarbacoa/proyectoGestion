@@ -6,47 +6,47 @@
 
             <!-- Cambio de Moneda -->
             <div class="currency-change-holder">
-
-                <!-- Select de las monedas -->
-                <select class="currency-change" name="currency" id="currency">
-                    <option value="detlle">Filtrar por préstamo</option>
-                    <option>Préstamo1</option>
-                    <option>Préstamo2</option>
-                    <option>Etc..-</option>
-                </select> <!-- TODO: Las variables están quemadas, aplicar función y variables -->
-
+  <!-- COMPONENTE DE BUSQUEDA -->
+       <div class="search-bar">
+          <input  type="text" [(ngModel)]="searchQuery" placeholder="Buscar...">
+           <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
+       </div>
+             
                 <i class="fa-solid fa-chevron-down" style="margin-left: -2.5rem; color: white;"></i>
 
             </div>
         </div>
 
-        <!-- Tabla de cálculos -->
-<table class="data-table">
-    <thead>
-      <tr>
-        <th>Detalle</th>
-        <th>Acreedor</th>
-        <th>Total del Préstamo</th>
-        <th>% Interés</th>
-        <th>Número de Cuotas</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let calculo of userCollectionData; let i = index">
-        <td [ngClass]="{
-          'td1': i % 4 === 0,
-          'td2': i % 4 === 1,
-          'td3': i % 4 === 2,
-          'td4': i % 4 === 3
-        }">{{ calculo.name }}</td>
-        <td>{{ calculo.Acreedor }}</td>
-        <td>{{ calculo.total }}</td>
-        <td>{{ calculo.Intereses }}</td>
-        <td>{{ calculo.Cuotas }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
+     
+
+      
+      <!-- Tabla de cálculos -->
+      <table class="data-table">
+          <thead>
+            <tr>
+              <th>Detalle</th>
+              <th>Acreedor</th>
+              <th>Total del Préstamo</th>
+              <th>% Interés</th>
+              <th>Número de Cuotas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let calculo of userCollectionData | filter: searchQuery; let i = index">
+              <td [ngClass]="{
+                'td1': i % 4 === 0,
+                'td2': i % 4 === 1,
+                'td3': i % 4 === 2,
+                'td4': i % 4 === 3
+              }">{{ calculo.name }}</td>
+              <td>{{ calculo.Acreedor }}</td>
+              <td>{{ calculo.total }}</td>
+              <td>{{ calculo.Intereses }}</td>
+              <td>{{ calculo.Cuotas }}</td>
+            </tr>
+          </tbody>
+      </table>
+      
           
         <!-- Botón para generar un PDF -->
         <button type="submit" class="boton-agregar">

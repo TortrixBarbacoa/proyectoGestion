@@ -14,7 +14,10 @@ export class CalcViewComponent {
   formCalc: FormGroup;
   public errorFire = '';
   titulo: string = 'Calculadora de Intereses';
-
+  cuotaM: number = 0;  
+  interes: number=0;
+  cuotas: number=0;
+  total: number=0;
   constructor(
     private userService: UserRegister,
     private router: Router,
@@ -25,22 +28,42 @@ export class CalcViewComponent {
       Cuotas: new FormControl(),
       Tasa: new FormControl(),
     });
+  
+    // Verificar si existen datos en localStorage y cargarlos si es necesario
+    const savedInteres = localStorage.getItem('interes');
+    const savedCuotaM = localStorage.getItem('cuotaM');
+    const savedTotal = localStorage.getItem('total');
+  
+    if (savedInteres && savedCuotaM && savedTotal) {
+      this.interes = parseFloat(savedInteres);
+      this.cuotaM = parseFloat(savedCuotaM);
+      this.total = parseFloat(savedTotal);
+    }
   }
 
 // Funcion que calcula el interes simple
 calcular() {
   // Se obtienen los valores del formulario
   const capital = this.formCalc.get('Capital')?.value;
-  const cuotas = this.formCalc.get('Cuotas')?.value;
+  this.cuotas = this.formCalc.get('Cuotas')?.value;
   const tasa = this.formCalc.get('Tasa')?.value;
 
-  // Calculo del interés simple
-  const interes = capital*(tasa/ 100)*cuotas;
+  // Calculo del interés mensual es la cantidad inicial OSEA EL CAPITAL 
+  //partido la cantidad de cuotas por la tasa de interes dividio 100
+  this.interes= capital/this.cuotas*tasa/100;
+  //El valor de la cuota mensual es el capital dividido la cantidad de cuotas 
+  this.cuotaM= capital/this.cuotas;
+  // Calculo del total a pagar es el interes mas el capital
+  this.total=this.interes + this.cuotaM;
 
-  // Imprime los valores en la consola
-  console.log('Capital:', capital);
-  console.log('Cuotas:', cuotas);
-  console.log('Tasa de Interés:', tasa);
-  console.log('Interés:', interes);
+  // Redondear a dos decimales
+  this.interes = Math.round(this.interes * 100) / 100;
+  this.total = Math.round(this.total * 100) / 100;
+  this.cuotaM = Math.round(this.cuotaM * 100) / 100;
+
+    // Guardar los datos en localStorage
+    localStorage.setItem('interes', this.interes.toString());
+    localStorage.setItem('cuotaM', this.cuotaM.toString());
+    localStorage.setItem('total', this.total.toString());
 }
 }

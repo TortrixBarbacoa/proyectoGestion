@@ -7,6 +7,7 @@ import { usersInfo } from 'src/app/models/users-info';
 import { switchMap, tap } from 'rxjs';
 import { user } from '@angular/fire/auth';
 
+
 @Component({
   selector: 'app-main-app',
   templateUrl: './main-app.component.html',

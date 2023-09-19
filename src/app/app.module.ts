@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FilterPipe } from './components/detalles-view/filter.pipe'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +28,7 @@ import { SolicitarViewComponent } from './solicitar-view/solicitar-view.componen
     CalcViewComponent,
     DetallesViewComponent,
     SolicitarViewComponent,
+    FilterPipe,
   ],
   imports: [
     
