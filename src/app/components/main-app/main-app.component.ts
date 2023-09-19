@@ -14,6 +14,8 @@ import { user } from '@angular/fire/auth';
 })
 export class MainAppComponent {
   fullName: any;
+  detalleUser: any;
+  prueba: any;
   user$ = this.userInfo.currentUserProfileInfo$;
 
   homeSelected: boolean = true;
@@ -32,6 +34,12 @@ export class MainAppComponent {
       // Llama al servicio para obtener el fullName y asignarlo a la propiedad
       this.userService.getAuthenticatedUserName().then((fullName) => {
         this.fullName = fullName;
+      });
+      this.userService.getAuthenticateUserCollection().then((detalleUser)=> {
+        this.detalleUser = detalleUser;
+      });
+      this.userService.getAllUsersInfo().then((prueba) =>{
+        this.prueba = prueba;
       });
     }
     
