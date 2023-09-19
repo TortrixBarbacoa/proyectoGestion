@@ -37,10 +37,12 @@ calcular() {
   this.cuotas = this.formCalc.get('Cuotas')?.value;
   const tasa = this.formCalc.get('Tasa')?.value;
 
-  // Calculo del interés simple
+  // Calculo del interés mensual es la cantidad inicial OSEA EL CAPITAL 
+  //partido la cantidad de cuotas por la tasa de interes dividio 100
   this.interes= capital/this.cuotas*tasa/100;
-
+  //El valor de la cuota mensual es el capital dividido la cantidad de cuotas 
   this.cuotaM= capital/this.cuotas;
+  // Calculo del total a pagar es el interes mas el capital
   this.total=this.interes + this.cuotaM;
 
   // Redondear a dos decimales
