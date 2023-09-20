@@ -202,10 +202,12 @@ export class UserRegister {
   editUser(userUid:string, newData:any): Promise<void>{
     return new Promise(async (resolve, reject) => {
         try {
+          console.log(newData.email);
           const docRef = doc(this.firestore, 'users', userUid);
+          const prueba = collection(this.firestore, 'users');
 
           await updateDoc(docRef, newData);
-
+          
           resolve();
         } catch (error) {
           reject(error);

@@ -41,7 +41,7 @@ export class TablaUsuariosComponent implements OnInit {
 
   getDataUser(userId: string) {
     let editUser = this.collecionAllUsers.filter(item => item.userData.uid === userId);
-    console.log(editUser);
+    console.log('--------------', editUser);
     this.firstname = editUser[0].userData.firstName;
     this.uid = editUser[0].userData.uid;
     this.lastname = editUser[0].userData.lastName;
