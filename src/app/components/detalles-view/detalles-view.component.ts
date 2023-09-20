@@ -16,6 +16,6 @@ export class DetallesViewComponent implements OnInit {
   ngOnInit(): void {
     this.userRegister.getAuthenticateUserCollection().then((data) => {
       this.userCollectionData = data;
-    });
-  }
+    });
+  }
 }

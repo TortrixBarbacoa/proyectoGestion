@@ -22,30 +22,30 @@
       
       <!-- Tabla de cálculos -->
       <table class="data-table">
-          <thead>
-            <tr>
-              <th>Detalle</th>
-              <th>Acreedor</th>
-              <th>Total del Préstamo</th>
-              <th>% Interés</th>
-              <th>Número de Cuotas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let calculo of userCollectionData | filter: searchQuery; let i = index">
-              <td [ngClass]="{
-                'td1': i % 4 === 0,
-                'td2': i % 4 === 1,
-                'td3': i % 4 === 2,
-                'td4': i % 4 === 3
-              }">{{ calculo.name }}</td>
-              <td>{{ calculo.Acreedor }}</td>
-              <td>{{ calculo.total }}</td>
-              <td>{{ calculo.Intereses }}</td>
-              <td>{{ calculo.Cuotas }}</td>
-            </tr>
-          </tbody>
-      </table>
+        <thead>
+          <tr>
+            <th>Detalle</th>
+            <th>Usuario</th>
+            <th>Total del Préstamo</th>
+            <th>% Interés</th>
+            <th>Número de Cuotas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let calculo of userCollectionData | filter: searchQuery; let i = index">
+            <td [ngClass]="{
+              'td1': i % 4 === 0,
+              'td2': i % 4 === 1,
+              'td3': i % 4 === 2,
+              'td4': i % 4 === 3
+            }">{{ calculo.alias }}</td>
+            <td>{{ calculo.Acreedor }}</td>
+            <td>{{ calculo.monthly }}</td>
+            <td>{{ calculo.interes }} %</td>
+            <td>{{ calculo.totalInteres }}</td>
+          </tr>
+        </tbody>
+      </table>
       
           
         <!-- Botón para generar un PDF -->

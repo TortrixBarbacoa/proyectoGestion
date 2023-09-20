@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
-import { collection, doc, docData, Firestore, getDoc, setDoc, updateDoc, getDocs,deleteDoc } from '@angular/fire/firestore';
+import { collection, doc, docData, Firestore, getDoc, setDoc, updateDoc, getDocs,deleteDoc, addDoc } from '@angular/fire/firestore';
 import { ResolveEnd } from '@angular/router';
 
 
@@ -107,7 +107,7 @@ export class UserRegister {
 
           if (docSnap.exists()) {
             //Referencia a la colección de Calculos por medio del uid
-            const collectionCalcRef = collection(this.firestore, 'users', userId, 'Calculos');
+            const collectionCalcRef = collection(this.firestore, 'users', userId, 'mis_prestamos');
             const arrayCalcDocsUser = await getDocs(collectionCalcRef);
             let arrayCalcDocs: any[] = [];
             //Obtiene la informacion de cada documento
@@ -215,4 +215,19 @@ export class UserRegister {
     });
   }
 
+  async guardarDatosEnFirestore(formData: any): Promise<void> {
+    try {
+      const user = this.auth.currentUser;
+      if (user) {
+        const userId = user.uid;
+        await addDoc(collection(this.firestore, `users/${userId}/mis_prestamos`), formData);
+        alert('La solicitud de su Prestamo ha sido recibida');
+      } else {
+        throw new Error('El usuario no está autenticado');
+      }
+    } catch (error) {
+      console.error('Error al guardar datos en Firestore:', error);
+      throw error;
+    }
+  }
 }
