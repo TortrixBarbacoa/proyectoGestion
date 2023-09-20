@@ -10,7 +10,7 @@
 
         <!-- Input Capital -->
         <div class="input-form-holder" >
-            <input type="number" min="0" class="form-control input-style-calc" formControlName="Capital" placeholder="Capital Inicial">
+            <input type="number" min="0" class="form-control input-style-calc" formControlName="Capital" placeholder="Capital Inicial" required>
         </div>
         
         <!-- Input Cuotas -->
@@ -36,11 +36,11 @@
 
         <!-- Input Tasa de Interés -->
         <div class="input-form-holder" >
-            <input type="number" min="0" class="form-control input-style-calc" formControlName="Tasa" placeholder="Tasa de Interés">
+            <input type="number" min="0" class="form-control input-style-calc" formControlName="Tasa" placeholder="Tasa de Interés" required>
         </div>
 
         <!-- Botón Calcular con evento (click) -->
-        <button class="btn btn-calc" type="button" (click)="calcular()">
+        <button class="btn btn-calc" [disabled]="!formCalc.valid" type="submit" (click)="calcular()">
             <h1>Calcular</h1>
         </button>
     </form>
