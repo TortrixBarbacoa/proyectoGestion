@@ -11,7 +11,7 @@
 
         <!-- Nombre de Usuario -->
         <ng-container class="user-name-holder">
-            <h1> {{ fullName }} </h1>
+            <h1> {{userData.fullName}} - {{userData.rol}} </h1>
         </ng-container>
 
         <!-- Cambio de Moneda -->
@@ -85,7 +85,7 @@
                 <app-calc-view></app-calc-view>
             </div> <!-- TODO: El componente deberá cambiar con el ruteo -->
 
-            <div *ngIf="detalleSelected === true">
+            <div *ngIf="detalleSelected === true  && userData.rol != 'Admin'">
                 <app-detalles-view></app-detalles-view>
             </div> 
 

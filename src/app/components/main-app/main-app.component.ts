@@ -14,7 +14,7 @@ import { user } from '@angular/fire/auth';
   styleUrls: ['./main-app.component.css']
 })
 export class MainAppComponent {
-  fullName: any;
+  userData: any;
   detalleUser: any;
   prueba: any;
   user$ = this.userInfo.currentUserProfileInfo$;
@@ -22,28 +22,30 @@ export class MainAppComponent {
   homeSelected: boolean = true;
   calculoSelected: boolean = false;
   detalleSelected: boolean = false;
-  
+
   // * Constructor userService y Router
   constructor(
     private userInfo: UserProfileInfoService,
-    private userService: UserRegister, 
+    private userService: UserRegister,
     private router: Router,
-    ){} 
-  
+  ) { }
 
-    ngOnInit(): void {
-      // Llama al servicio para obtener el fullName y asignarlo a la propiedad
-      this.userService.getAuthenticatedUserName().then((fullName) => {
-        this.fullName = fullName;
-      });
-      this.userService.getAuthenticateUserCollection().then((detalleUser)=> {
-        this.detalleUser = detalleUser;
-      });
-      this.userService.getAllUsersInfo().then((prueba) =>{
-        this.prueba = prueba;
-      });
-    }
-    
+
+  ngOnInit(): void {
+    // Llama al servicio para obtener el userData y asignarlo a la propiedad
+    this.userService.getAuthenticatedUserName().then((userData) => {
+      this.userData = userData;
+    });
+    this.userService.getAuthenticateUserCollection().then((detalleUser) => {
+      this.detalleUser = detalleUser;
+    });
+
+    this.userService.getAllUsersInfo().then((prueba) => {
+      this.prueba = prueba;
+    });
+  }
+
+
   // * Método logOut 
   logOut() {
     this.userService.logOut()

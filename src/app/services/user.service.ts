@@ -46,7 +46,7 @@ export class UserRegister {
 
   
   //FUNCION QUE TRAE LA INFORMACIÓN DEL USUARIO LOGGEADO Y OBTIENE EL NOMBRE Y APELLIDO
-getAuthenticatedUserName(): Promise<string | null> {
+getAuthenticatedUserName(): Promise<any | null> {
   return new Promise(async (resolve, reject) => {
     const user = this.auth.currentUser;
     
@@ -63,8 +63,12 @@ getAuthenticatedUserName(): Promise<string | null> {
         if (docSnap.exists()) {
           const userData = docSnap.data() as any;
           const fullName = `${userData.firstName} ${userData.lastName}`;
-          resolve(fullName);
-          console.log(fullName)
+          const rol = userData.rol;
+          const user = {
+            "fullName" : fullName,
+            "rol" : rol
+          }
+          resolve(user);
           
         } else {
          
