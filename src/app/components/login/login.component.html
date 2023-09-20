@@ -5,7 +5,7 @@
     <div class="login-holder row container-fluid">
 
         <!-- * Contenedor de Información del Login (Formulario y Logo) -->
-        <div class="info-holder">
+        <div class="info-holder col">
 
             <!-- Logo -->
             <div class="login-logo-holder">
@@ -16,7 +16,7 @@
             <form class="login-form-holder" [formGroup]="formReg" (ngSubmit)="onSubmit()">
 
                 <!-- Título -->
-                <h1>Iniciar Sesión</h1>
+                <h1 style="margin-bottom: 1rem;">Iniciar Sesión</h1>
 
                 <!-- Input Email -->
                 <div class="input-form-holder">
@@ -34,7 +34,7 @@
                 <h3> {{errorFire}} </h3>
 
                 <!-- Botón Ingresar -->
-                <button class="btn btn-login" type="submit" value="Enviar">
+                <button class="btn-login" type="submit" value="Enviar">
                     <h1>Ingresar</h1>
                 </button>
 

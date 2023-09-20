@@ -107,13 +107,14 @@ select {
 /* * Holder sidebar */
 .sidebar-main {
     height: 100%;
-    width: 14%;
+    width: 15rem;
     justify-content: start;
     align-items: start;
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
     background-color: black;
+    
 }
 
 /* * Holder de opciones en sidebar */
@@ -136,7 +137,6 @@ select {
 
 /* * Contenido en el side (Opciones disponibles) */
 .side-element-holder-content {
-    margin-left: 2rem;
     justify-content: start;
     align-items: center;
     display: flex;

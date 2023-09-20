@@ -174,5 +174,7 @@ select {
     justify-self: start;
     align-self: start;
     margin-left: 1rem;
+    margin-top: -1.5rem;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }

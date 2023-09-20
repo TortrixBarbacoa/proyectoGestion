@@ -29,10 +29,10 @@
     </div>
 
     <!-- * Holder del contenido -->
-    <div class="app-holder container-fluid">
+    <div class="app-holder">
 
         <!-- Sidebar -->
-        <aside class="sidebar-main container-fluid">
+        <aside class="sidebar-main">
 
             <!-- Elemento Calculadora -->
             <div class="side-element-holder container-fluid">
@@ -62,7 +62,7 @@
                 <div  [ngClass]="{'active-true': usuarioSelected === true, 'active-false': usuarioSelected === false}" 
                 class="side-element-holder-content container-fluid"
                 (click)="clickUsuario()">
-                    <i class="fa-solid fa-database side-icon-style"></i> 
+                    <i class="fa-solid fa-user side-icon-style"></i> 
                     <h2>Usuarios</h2>
                 </div>
             </div>

@@ -2,15 +2,15 @@
 h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 800;
     color: black;
 }
 
 h2 {
     font-family: 'Lato', sans-serif;
     font-size: 1.3rem;
-    font-weight: 200;
-    color: #737373;
+    font-weight: 400;
+    color: #004AAD;
     margin-top: 0;
     margin-bottom: 0.2rem;
 }
@@ -32,7 +32,7 @@ h3 {
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     height: 90%;
 }
 
@@ -40,6 +40,7 @@ h3 {
 .register-logo-holder {
     padding-top: 2rem;
     padding-left: 2rem;
+    margin-bottom: 1.3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -93,6 +94,7 @@ h3 {
     border-radius: 0.3rem;
     border: none;
     background-color: #004AAD;
+    margin-bottom: 0.5rem;
 }
 
 .btn-register h1{

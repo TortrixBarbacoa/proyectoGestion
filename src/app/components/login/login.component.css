@@ -3,7 +3,7 @@
 h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 600;
     color: black;
 }
 
@@ -11,8 +11,8 @@ h1 {
 h2 {
     font-family: 'Lato', sans-serif;
     font-size: 1.3rem;
-    font-weight: 200;
-    color: #737373;
+    font-weight: 400;
+    color: #004AAD;
     margin-top: 0;
     margin-bottom: 0.2rem;
 }
@@ -129,6 +129,7 @@ h3 {
     border: none;
     color: white;
     background-color: black;
+    margin-bottom: 0.5rem;
 }
 
 /* Estilo del botón de inicio de sesión al pasar el mouse por encima */
@@ -143,6 +144,3 @@ h3 {
     margin: 0.7rem;
     color: white;
 }
-
-
-

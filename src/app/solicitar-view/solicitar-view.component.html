@@ -1,64 +1,62 @@
-<div class="request-main-holder container-fluid">
-
-    <div class="request-holder container-fluid">
-        <h1 style="margin-top: 1rem; margin-bottom: -1rem;">Cálculo Detallado</h1>
-
+<div class="request-main-holder container">
+    <div class="request-holder container">
+        <h1 class="text-center" style="margin-top: 3rem;">Cálculo Detallado</h1>
         <form class="form-holder">
-
-            <div class="input-group">
-                <div class="input-holder">
-                    <h2>Alias</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="No Mayor a 10 Letras">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-holder">
+                        <h2>Detalle</h2>
+                        <input type="text" class="form-control input-style-sol" placeholder="">
+                    </div>
                 </div>
-                <div class="input-holder">
-                    <h2>Total con Interés</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="Total con Interés">
-                </div>
-            </div>
-
-            <div class="input-group">
-                <div class="input-holder">
-                    <h2>Cantidad a Solicitar</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="Cantidad">
-                
-                </div>
-                <div class="input-holder">
-                    <h2>Cuotas Con Interés</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="Automático">
+                <div class="col-md-6">
+                    <div class="input-holder">
+                        <h2>Cantidad a Solicitar</h2>
+                        <input type="number" formControlName="cantidad" class="form-control input-style-sol" placeholder="Cantidad">
+                    </div>
                 </div>
             </div>
 
-            <div class="input-group">
-                <div class="input-holder">
-                    <h2>Interés</h2>
-                    <input type="text" class="form-control input-style-sol" placeholder="Auto %">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-holder">
+                        <h2>Interés</h2>
+                        <input type="text" class="form-control input-style-sol" placeholder="">
+                    </div>
                 </div>
-                <div class="input-holder1">
-                    <h2>Cantidad De Cuotas</h2>
-                    <select class="input-style-calc-number" name="monthly" id="monthly">
-                        <option value="default" selected disabled>Seleccionar</option>
-                        <option value="3">3</option>
-                        <option value="6">6</option>
-                        <option value="12">12</option>
-                        <option value="18">18</option>
-                        <option value="24">24</option>
-                        <option value="36">36</option>
-                        <option value="48">48</option>
-                        <option value="60">60</option>
-                        <option value="72">72</option>
-                        <option value="84">84</option>
-                        <option value="96">96</option>
-                        <option value="108">108</option>
-                        <option value="120">120</option>
-                    </select>
+                <div class="col-md-6">
+                    <div class="input-holder">
+                        <h2>Cantidad De Cuotas</h2>
+                        <select class="form-control input-style-sol" name="monthly" id="monthly">
+                            <option value="default" selected disabled>Seleccionar</option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-                
-            <button class="btn btn-calc">
-                <h3>SOLICITAR PRÉSTAMO</h3>
-            </button>
-        
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-holder">
+                        <h2>Total Con Interés </h2>
+                       <input type="text" formControlName="monthly" class="form-control input-style-sol" placeholder="Automático" readonly>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-holder">
+                        <h2>Total Interés</h2>
+                        <input type="text" formControlName="monthly" class="form-control input-style-sol" placeholder="Automático" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button class="btn btn-calc">
+                    <h3>SOLICITAR PRÉSTAMO</h3>
+                </button>
+            </div>
         </form>
     </div>
-
 </div>
