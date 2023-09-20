@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // <--- import Router
 import { UserRegister } from 'src/app/services/user.service'; // <--- import UserService
 import { UserProfileInfoService } from 'src/app/services/user-profile-info.service';
-import { FormControl, FormGroup } from '@angular/forms'; // <--- import FormControl, FormGroup
-import { usersInfo } from 'src/app/models/users-info';
-import { switchMap, tap } from 'rxjs';
-import { user } from '@angular/fire/auth';
 
 
 @Component({
