@@ -73,12 +73,12 @@ export class RegisterComponent {
     if (!this.formReg.valid || !name || !password || !email || !lastName || !phoneNum) {
       return;
     }
-
+    let rol = 'Usuario';
     this.userService
     .register({ email, password })
     .then((userCredential: UserCredential) => {
       const { user: { uid } } = userCredential;
-      return this.userProfileInfo.addUser({ uid, email, firstName: name, lastName, phone: phoneNum });
+      return this.userProfileInfo.addUser({ uid, email, firstName: name, lastName, phone: phoneNum, rol });
     })
     .then(() => {
       this.router.navigate(['/home']);

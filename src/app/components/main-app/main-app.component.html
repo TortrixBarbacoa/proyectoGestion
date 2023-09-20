@@ -55,6 +55,17 @@
                     <h2>Cálculo Detallado</h2>
                 </div>
             </div>
+
+            <!-- Elemento USUARIOS -->
+            <div class="side-element-holder container-fluid" *ngIf="userData.rol == 'Admin'" >
+                <div [ngClass]="{'active-page-flag': usuarioSelected === true}"></div>
+                <div  [ngClass]="{'active-true': usuarioSelected === true, 'active-false': usuarioSelected === false}" 
+                class="side-element-holder-content container-fluid"
+                (click)="clickUsuario()">
+                    <i class="fa-solid fa-database side-icon-style"></i> 
+                    <h2>Usuarios</h2>
+                </div>
+            </div>
     
             <!-- Elemento Detalle -->
             <div class="side-element-holder container-fluid">
@@ -85,11 +96,14 @@
                 <app-calc-view></app-calc-view>
             </div> <!-- TODO: El componente deberá cambiar con el ruteo -->
 
-            <div *ngIf="detalleSelected === true  && userData.rol != 'Admin'">
-                <!-- <app-detalles-view></app-detalles-view> -->
+            <div *ngIf="detalleSelected === true">
+                <app-detalles-view></app-detalles-view>
+                
+            </div>
+            <div *ngIf="usuarioSelected === true ">
                 <!-- Coloqué el componente de la tabla de usuarios para prueba -->
                 <app-tabla-usuarios></app-tabla-usuarios>
-            </div> 
+            </div>
 
             <div *ngIf="calculoSelected === true">
                 <app-solicitar-view></app-solicitar-view>

@@ -30,9 +30,9 @@ export class CalcViewComponent {
     });
   
     // Verificar si existen datos en localStorage y cargarlos si es necesario
-    const savedInteres = localStorage.getItem('interes');
-    const savedCuotaM = localStorage.getItem('cuotaM');
-    const savedTotal = localStorage.getItem('total');
+    const savedInteres = sessionStorage.getItem('interes');
+    const savedCuotaM = sessionStorage.getItem('cuotaM');
+    const savedTotal = sessionStorage.getItem('total');
   
     if (savedInteres && savedCuotaM && savedTotal) {
       this.interes = parseFloat(savedInteres);
@@ -61,9 +61,9 @@ calcular() {
   this.total = Math.round(this.total * 100) / 100;
   this.cuotaM = Math.round(this.cuotaM * 100) / 100;
 
-    // Guardar los datos en localStorage
-    localStorage.setItem('interes', this.interes.toString());
-    localStorage.setItem('cuotaM', this.cuotaM.toString());
-    localStorage.setItem('total', this.total.toString());
+    // Guardar los datos en sessionStorage
+    sessionStorage.setItem('interes', this.interes.toString());
+    sessionStorage.setItem('cuotaM', this.cuotaM.toString());
+    sessionStorage.setItem('total', this.total.toString());
 }
 }

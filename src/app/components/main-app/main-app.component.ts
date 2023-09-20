@@ -22,12 +22,14 @@ export class MainAppComponent {
   homeSelected: boolean = true;
   calculoSelected: boolean = false;
   detalleSelected: boolean = false;
+  usuarioSelected: boolean = false;
 
   // * Constructor userService y Router
   constructor(
     private userInfo: UserProfileInfoService,
     private userService: UserRegister,
     private router: Router,
+    
   ) { }
 
 
@@ -51,6 +53,7 @@ export class MainAppComponent {
     this.userService.logOut()
       .then(() => {
         this.router.navigate(['/login']);
+        sessionStorage.clear();
       })
       .catch((error) => {
         console.log(error);
@@ -61,17 +64,26 @@ export class MainAppComponent {
     this.homeSelected = true;
     this.detalleSelected = false;
     this.calculoSelected = false;
+    this.usuarioSelected = false;
   }
 
   clickDetalle() {
     this.homeSelected = false;
     this.detalleSelected = true;
     this.calculoSelected = false;
+    this.usuarioSelected = false;
+  }
+  clickUsuario() {
+    this.homeSelected = false;
+    this.detalleSelected = false;
+    this.calculoSelected = false;
+    this.usuarioSelected = true;
   }
 
   clickSolicitar() {
     this.homeSelected = false;
     this.detalleSelected = false;
     this.calculoSelected = true;
+    this.usuarioSelected = false;
   }
 }

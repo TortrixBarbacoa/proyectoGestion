@@ -3,5 +3,7 @@ export interface usersInfo {
     email?: string;
     firstName?: string;
     lastName?: string;
-    phone?: string;    address?: string;
+    phone?: string;   
+    address?: string;
+    rol? :string;
 }
