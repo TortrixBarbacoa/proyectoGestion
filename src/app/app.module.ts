@@ -19,6 +19,7 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { DetallesViewComponent } from './components/detalles-view/detalles-view.component';
 import { SolicitarViewComponent } from './solicitar-view/solicitar-view.component';
 import { TablaUsuariosComponent } from './components/tabla-usuarios/tabla-usuarios.component';
+import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TablaUsuariosComponent } from './components/tabla-usuarios/tabla-usuari
     SolicitarViewComponent,
     FilterPipe,
     TablaUsuariosComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     
