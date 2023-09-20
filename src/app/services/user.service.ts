@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
-import { collection, doc, docData, Firestore, getDoc, setDoc, updateDoc, getDocs } from '@angular/fire/firestore';
+import { collection, doc, docData, Firestore, getDoc, setDoc, updateDoc, getDocs,deleteDoc } from '@angular/fire/firestore';
 import { ResolveEnd } from '@angular/router';
 
 
@@ -184,5 +184,33 @@ export class UserRegister {
     });
   }
 
+
+  deleteUser(userUid: string): Promise<void> {
+    return new Promise(async (resolve, reject) => {
+        try {
+          const docRef = doc(this.firestore, 'users', userUid);
+
+          await deleteDoc(docRef);
+
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
+    });
+  }
+
+  editUser(userUid:string, newData:any): Promise<void>{
+    return new Promise(async (resolve, reject) => {
+        try {
+          const docRef = doc(this.firestore, 'users', userUid);
+
+          await updateDoc(docRef, newData);
+
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
+    });
+  }
 
 }

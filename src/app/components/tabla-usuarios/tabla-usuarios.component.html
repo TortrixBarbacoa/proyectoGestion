@@ -26,8 +26,8 @@
                   <!--   <td>Escuintla</td> -->
                     <td>{{users.userData.phone}}</td>
                     <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Editar"
-                            data-bs-whatever="@mdo"><i class="bi bi-pencil-square"></i></button></td>
-                    <td><button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+                            data-bs-whatever="@mdo"><i class="bi bi-pencil-square" (click)="getDataUser(users.userData.uid)"></i></button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="deleteUserUid(users.userData.uid)"><i class="bi bi-trash3-fill"></i></button></td>
                 </tr>
                 
             </tbody>
@@ -51,46 +51,46 @@
                     <div class="col-md-4">
                         <div class="input-group">
                             <div class="input-group-text"><i class="bi bi-person"></i></div>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" value="{{firstname}}">
                         </div>
                     </div>
                     <!-- CAMPO DE APELLIDO -->
                     <div class="col-md-4">
-                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellido"value="{{lastname}}">
                     </div>
                     <!-- CAMPO DE ROL -->
                     <div class="col-md-4">
                         <div class="input-group">
                             <div class="input-group-text"><i class="bi bi-person-fill-gear"></i></div>
-                            <input type="text" class="form-control" id="inputRol" placeholder="Rol">
+                            <input type="text" class="form-control" id="inputRol" placeholder="Rol"value="{{rol}}">
                         </div>
                     </div>
                     <!-- CAMPO DE EMAIL -->
                     <div class="col-md-12">
                         <div class="input-group">
                             <div class="input-group-text"><i class="bi bi-envelope-at"></i></div>
-                            <input type="email" class="form-control" id="inputCorreo" placeholder="Email">
+                            <input type="email" class="form-control" id="inputCorreo" placeholder="Email" value="{{email}}">
                         </div>
                     </div>
                     <!-- CAMPO DE DIRECCIÓN -->
                     <div class="col-md-12">
                         <div class="input-group">
                             <div class="input-group-text"><i class="bi bi-house"></i></div>
-                            <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección">
+                            <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección" >
                         </div>
                     </div>
                     <!-- CAMPO DE CONTRASEÑA -->
                     <div class="col-md-6">
                         <div class="input-group">
                             <div class="input-group-text"><i class="bi bi-lock"></i></div>
-                            <input type="password" class="form-control" id="inputContraseña" placeholder="Password">
+                            <input type="text" class="form-control" id="inputUid" placeholder="Uid" value="{{uid}}">
                         </div>
                     </div>
                     <!-- CAMPO DE NUMERO DE TELEFONO -->
                     <div class="col-md-6">
                         <div class="input-group">
                             <div class="input-group-text"><i class="bi bi-phone"></i></div>
-                            <input type="number" class="form-control" id="inputTelefono" placeholder="Teléfono">
+                            <input type="number" class="form-control" id="inputTelefono" placeholder="Teléfono" value="{{phone}}">
                         </div>
                     </div>
 
@@ -98,7 +98,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-success">Guardar</button>
+                <button type="button" class="btn btn-success" (click)="editUserUid(uid, firstname, lastname, rol, phone, email)">Guardar</button>
             </div>
         </div>
     </div>
