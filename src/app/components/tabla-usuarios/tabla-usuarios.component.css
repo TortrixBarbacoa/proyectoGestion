@@ -1,0 +1,14 @@
+.custom-table{
+    width: 100%;
+    font-size: 18px;
+}
+
+.container-fluid{
+    background-color: white;
+    border-radius: 10px;
+    width: 1200px;
+}
+.text-center{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin-bottom: 20px;
+}

@@ -18,6 +18,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { DetallesViewComponent } from './components/detalles-view/detalles-view.component';
 import { SolicitarViewComponent } from './solicitar-view/solicitar-view.component';
+import { TablaUsuariosComponent } from './components/tabla-usuarios/tabla-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SolicitarViewComponent } from './solicitar-view/solicitar-view.componen
     DetallesViewComponent,
     SolicitarViewComponent,
     FilterPipe,
+    TablaUsuariosComponent,
   ],
   imports: [
     

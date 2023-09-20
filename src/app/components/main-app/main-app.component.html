@@ -86,7 +86,9 @@
             </div> <!-- TODO: El componente deberá cambiar con el ruteo -->
 
             <div *ngIf="detalleSelected === true  && userData.rol != 'Admin'">
-                <app-detalles-view></app-detalles-view>
+                <!-- <app-detalles-view></app-detalles-view> -->
+                <!-- Coloqué el componente de la tabla de usuarios para prueba -->
+                <app-tabla-usuarios></app-tabla-usuarios>
             </div> 
 
             <div *ngIf="calculoSelected === true">
