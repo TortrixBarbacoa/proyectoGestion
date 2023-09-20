@@ -5,13 +5,13 @@
 <div class="register-holder container-fluid">
 
     <!-- Logo -->
-    <div class="register-logo-holder">
+    <div class="register-logo-holder container-fluid">
         <img src="../../../assets/img/Login-Logo.png" class="img-fluid" alt="Logo">
     </div>
 
     <!-- Formulario -->
     <form class="register-form-holder" [formGroup]="formReg" (ngSubmit)="onSubmit()">
-        <h1>Registro</h1>
+        <h1 style="margin-bottom: 1.5rem;">Registro</h1>
 
         <div class="input-group-row"> 
             <div class="input-form-holder">
@@ -60,7 +60,7 @@
         <h3> {{errorFire}} </h3>
 
         <!-- Botón Registrar -->
-        <button class="btn btn-register" type="submit" value="Enviar">
+        <button class="btn-register" type="submit" value="Enviar">
             <h1>Crear cuenta</h1>
         </button>
 
