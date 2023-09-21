@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User, updatePassword, updateEmail } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
 import { collection, doc, docData, Firestore, getDoc, setDoc, updateDoc, getDocs,deleteDoc, addDoc } from '@angular/fire/firestore';
 import { ResolveEnd } from '@angular/router';
@@ -14,13 +14,10 @@ import { ResolveEnd } from '@angular/router';
 })
 export class UserRegister {
 
-  currentUser$ = new Observable<User | null>((observer) => {
-    const unsubscribe = onAuthStateChanged(this.auth, (user) => {
-      observer.next(user);
-    });
-    return unsubscribe;
-  });
+ 
 
+
+  
 
   // * Constructor de la clase Auth (Firebase)
   constructor(private auth: Auth, private firestore: Firestore) { }
@@ -65,12 +62,9 @@ export class UserRegister {
             const userData = docSnap.data() as any;
             const fullName = `${userData.firstName} ${userData.lastName}`;
             const rol = userData.rol;
+            const id = userData.uid;
             const user = {
-              "uid": userId,
-              "firstName" : userData.firstName,
-              "email" : userData.email,
-              "phone" : userData.phone,
-              "lastName" : userData.lastName,
+              "id": id,
               "fullName": fullName,
               "rol": rol
             }
@@ -101,24 +95,26 @@ export class UserRegister {
   getAuthenticateUserCollection(): Promise<any | null> {
     return new Promise(async (resolve, reject) => {
       const user = this.auth.currentUser;
-
+  
       if (user) {
         try {
           const userId = user.uid;
-
+  
           const userDocRef = doc(this.firestore, 'users', userId);
-
+  
           const docSnap = await getDoc(userDocRef);
-
+  
           if (docSnap.exists()) {
-            //Referencia a la colección de Calculos por medio del uid
+            // Referencia a la colección de Calculos por medio del uid
             const collectionCalcRef = collection(this.firestore, 'users', userId, 'mis_prestamos');
             const arrayCalcDocsUser = await getDocs(collectionCalcRef);
             let arrayCalcDocs: any[] = [];
-            //Obtiene la informacion de cada documento
+            // Obtiene la información de cada documento junto con su ID
             arrayCalcDocsUser.forEach((calcDoc) => {
               if (calcDoc.exists()) {
-                arrayCalcDocs.push(calcDoc.data());
+                const docData = calcDoc.data();
+                const docId = calcDoc.id; // Aquí obtienes el ID del documento
+                arrayCalcDocs.push({ id: docId, ...docData }); // Agrega el ID al objeto
               }
             });
             resolve(arrayCalcDocs);
@@ -130,8 +126,7 @@ export class UserRegister {
       }
     });
   }
-
-
+  
   /**
    * Con esta funcion obtenemos la informacion necesaria para pintar las dos tablas para la vista del admin
    * 1. Tabla para ver todos los usuarios registrados a la App
@@ -204,14 +199,26 @@ export class UserRegister {
     });
   }
 
+  deletePrestamo(Prestamoid: string): Promise<void> {
+    return new Promise(async (resolve, reject) => {
+        try {
+          const docRef = doc(this.firestore, 'mis_prestamos', Prestamoid);
+
+          await deleteDoc(docRef);
+
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
+    });
+  }
+
   editUser(userUid:string, newData:any): Promise<void>{
     return new Promise(async (resolve, reject) => {
         try {
-          
-          
+          console.log(newData.email);
           const docRef = doc(this.firestore, 'users', userUid);
           const prueba = collection(this.firestore, 'users');
-          
 
           await updateDoc(docRef, newData);
           
@@ -221,8 +228,6 @@ export class UserRegister {
         }
     });
   }
-
-  
 
   async guardarDatosEnFirestore(formData: any): Promise<void> {
     try {
@@ -239,4 +244,33 @@ export class UserRegister {
       throw error;
     }
   }
+
+async updateCalculation(userId: string, calculationId: string, updatedCalculation: any): Promise<void> {
+  try {
+
+    console.log('userId:', userId);
+    console.log('calculationId:', calculationId);
+    console.log('updatedCalculation:', updatedCalculation);
+    // Crear una referencia al documento de cálculo existente
+    const calcRef = doc(this.firestore, 'users', userId, 'mis_prestamos', calculationId);
+
+    // Actualiza el documento existente con los nuevos datos
+    await updateDoc(calcRef, updatedCalculation);
+    
+
+    // La actualización se realizó con éxito
+  } catch (error) {
+  
+    console.error('Error al actualizar el cálculo:', error);
+    throw error;
+  }
+}
+
+currentUser$ = new Observable<User | null>((observer) => {
+  const unsubscribe = onAuthStateChanged(this.auth, (user) => {
+    observer.next(user);
+  });
+  return unsubscribe;
+});
+
 }
