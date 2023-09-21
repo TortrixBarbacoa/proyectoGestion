@@ -234,4 +234,8 @@ select {
     margin-bottom: 2rem;
   }
   
-  
+  .no-data-message {
+    text-align: center;
+    font-family: Arial, sans-serif; /* Cambia la fuente de letra a tu elección */
+    font-size: 24px; /* Ajusta el tamaño de la fuente según tus preferencias */
+}
