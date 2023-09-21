@@ -44,7 +44,16 @@ export class DetallesViewComponent implements OnInit {
     // Llama al servicio para obtener el userData y asignarlo a la propiedad
     this.userService.getAuthenticatedUserName().then((userData) => {
       this.userData = userData;
-      console.log(userData);
+      if (this.userData.rol === 'Admin') {
+        this.userService.getAllUsersInfo().then((collecionAllUsers) => {
+
+          this.userCollectionData = this.ordenarInfo(collecionAllUsers);
+        });
+      } else {
+        this.userRegister.getAuthenticateUserCollection().then((data) => {
+          this.userCollectionData = data;
+        });
+      }
     });
     this.userService.getAuthenticateUserCollection().then((detalleUser) => {
       this.detalleUser = detalleUser;
@@ -117,6 +126,25 @@ deleteCalculationById(userId: string, calculationId: string) {
       console.error('Error al eliminar el préstamo:', error);
       alert('Error al eliminar el préstamo. Por favor, inténtalo de nuevo.');
     });
+}
+
+ordenarInfo(collecionAllUsers: any) {
+  let temp = [];
+  for (let i = 0; i < collecionAllUsers.length; i++) {
+    for (let j = 0; j < collecionAllUsers[i].arrayCalcDocs.length; j++) {
+      let newObject = {
+        "name": collecionAllUsers[i].userData.firstName + ' ' + collecionAllUsers[i].userData.lastName,
+        "cantidad": collecionAllUsers[i].arrayCalcDocs[j].cantidad,
+        "interes": collecionAllUsers[i].arrayCalcDocs[j].interes,
+        "cuotas": collecionAllUsers[i].arrayCalcDocs[j].cuotas,
+        "alias": collecionAllUsers[i].arrayCalcDocs[j].alias,
+        "monthly": collecionAllUsers[i].arrayCalcDocs[j].monthly
+      }
+      temp.push(newObject);
+    }
+
+  }
+  return temp;
 }
 
 
