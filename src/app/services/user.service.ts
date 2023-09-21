@@ -66,6 +66,11 @@ export class UserRegister {
             const fullName = `${userData.firstName} ${userData.lastName}`;
             const rol = userData.rol;
             const user = {
+              "uid": userId,
+              "firstName" : userData.firstName,
+              "email" : userData.email,
+              "phone" : userData.phone,
+              "lastName" : userData.lastName,
               "fullName": fullName,
               "rol": rol
             }
