@@ -26,7 +26,8 @@ export class EditarPerfilComponent {
   }
   editUserUid(newData:any)
   {
-    this.userRegister.editUser(newData.uid, newData)
+    console.log(newData);
+    this.userRegister.editUser(newData.id, newData)
       .then(() => {
         alert('Usuario actualizado con éxito');
 
