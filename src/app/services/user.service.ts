@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, User, updatePassword, updateEmail } from '@angular/fire/auth';
 import { Observable, from } from 'rxjs';
 import { collection, doc, docData, Firestore, getDoc, setDoc, updateDoc, getDocs,deleteDoc, addDoc } from '@angular/fire/firestore';
 import { ResolveEnd } from '@angular/router';
@@ -202,9 +202,11 @@ export class UserRegister {
   editUser(userUid:string, newData:any): Promise<void>{
     return new Promise(async (resolve, reject) => {
         try {
-          console.log(newData.email);
+          
+          
           const docRef = doc(this.firestore, 'users', userUid);
           const prueba = collection(this.firestore, 'users');
+          
 
           await updateDoc(docRef, newData);
           
@@ -214,6 +216,8 @@ export class UserRegister {
         }
     });
   }
+
+  
 
   async guardarDatosEnFirestore(formData: any): Promise<void> {
     try {

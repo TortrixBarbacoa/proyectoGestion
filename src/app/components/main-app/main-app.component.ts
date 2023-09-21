@@ -19,6 +19,7 @@ export class MainAppComponent {
   calculoSelected: boolean = false;
   detalleSelected: boolean = false;
   usuarioSelected: boolean = false;
+  editUserSelected: boolean = false;
 
   // * Constructor userService y Router
   constructor(
@@ -61,6 +62,7 @@ export class MainAppComponent {
     this.detalleSelected = false;
     this.calculoSelected = false;
     this.usuarioSelected = false;
+    this.editUserSelected = false;
   }
 
   clickDetalle() {
@@ -68,12 +70,14 @@ export class MainAppComponent {
     this.detalleSelected = true;
     this.calculoSelected = false;
     this.usuarioSelected = false;
+    this.editUserSelected = false;
   }
   clickUsuario() {
     this.homeSelected = false;
     this.detalleSelected = false;
     this.calculoSelected = false;
     this.usuarioSelected = true;
+    this.editUserSelected = false;
   }
 
   clickSolicitar() {
@@ -81,5 +85,13 @@ export class MainAppComponent {
     this.detalleSelected = false;
     this.calculoSelected = true;
     this.usuarioSelected = false;
+    this.editUserSelected = false;
+  }
+  clickEditUser() {
+    this.homeSelected = false;
+    this.detalleSelected = false;
+    this.calculoSelected = false;
+    this.usuarioSelected = false;
+    this.editUserSelected = true;
   }
 }
