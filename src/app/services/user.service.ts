@@ -273,4 +273,18 @@ currentUser$ = new Observable<User | null>((observer) => {
   return unsubscribe;
 });
 
+
+
+async deleteCalculationById(userId: string, calculationId: string): Promise<void> {
+  try {
+    const calcRef = doc(this.firestore, 'users', userId, 'mis_prestamos', calculationId);
+    await deleteDoc(calcRef);
+    // La eliminación se realizó con éxito
+  } catch (error) {
+    console.error('Error al eliminar el cálculo por ID:', error);
+    throw error;
+  }
+}
+
+
 }

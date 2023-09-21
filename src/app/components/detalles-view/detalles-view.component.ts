@@ -76,16 +76,41 @@ editCalculation() {
      
       alert('Préstamo actualizado con éxito');
       // Cierra el modal (puedes utilizar código para cerrarlo si usas Bootstrap)
-      
+      // Actualiza la lista de cálculos después de eliminar uno
+      this.refreshUserCollectionData();
     })
     .catch((error) => {
       // Error: Maneja el error apropiadamente, muestra un mensaje de error, etc.
       console.error('Error al actualizar el préstamo:', error);
       // Muestra un mensaje de error al usuario si es necesario
       alert('Error al actualizar el préstamo. Por favor, inténtalo de nuevo.');
-    });
+    });
 }
 
+refreshUserCollectionData() {
+  // Vuelve a cargar la colección de cálculos para el usuario actual
+  this.userRegister.getAuthenticateUserCollection().then((data) => {
+    this.userCollectionData = data;
+  });
+}
+
+// ...
+
+// Agrega este método para eliminar un cálculo por su ID
+deleteCalculationById(userId: string, calculationId: string) {
+  this.userRegister.deleteCalculationById(userId, calculationId)
+    .then(() => {
+      alert('Préstamo eliminado con éxito');
+      // Actualiza la lista de cálculos después de eliminar uno
+      this.refreshUserCollectionData();
+    })
+    .catch((error) => {
+      console.error('Error al eliminar el préstamo:', error);
+      alert('Error al eliminar el préstamo. Por favor, inténtalo de nuevo.');
+    });
+}
+
+// ...
 
 
 }

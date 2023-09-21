@@ -1,135 +1,136 @@
 <!-- * Vista General Componente detalles-view -->
 <div class="detalles-main-holder container-fluid">
-  <div class="detalles-holder container-fluid">
-      <div class="head-detalles-holder container-fluid">
-          <h1 style="width: 50%">Vista General</h1>
+    <div class="detalles-holder container-fluid">
+        <div class="head-detalles-holder container-fluid">
+            <h1 style="width: 50%">Vista General</h1>
 
-          <!-- Cambio de Moneda -->
-          <div class="currency-change-holder">
-<!-- COMPONENTE DE BUSQUEDA -->
-     <div class="search-bar">
-        <input  type="text" [(ngModel)]="searchQuery" placeholder="Buscar...">
-         <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
-     </div>
-           
-              <i class="fa-solid fa-chevron-down" style="margin-left: -2.5rem; color: white;"></i>
+            <!-- Cambio de Moneda -->
+            <div class="currency-change-holder">
+  <!-- COMPONENTE DE BUSQUEDA -->
+       <div class="search-bar">
+          <input  type="text" [(ngModel)]="searchQuery" placeholder="Buscar...">
+           <i class="fas fa-search"></i> <!-- Ícono de lupa de Font Awesome -->
+       </div>
+             
+                <i class="fa-solid fa-chevron-down" style="margin-left: -2.5rem; color: white;"></i>
 
-          </div>
-      </div>
+            </div>
+        </div>
 
-   
+     
 
-    
-   
-    <!-- Tabla de cálculos -->
+      
+     
+      <!-- Tabla de cálculos -->
 <table class="data-table">
-<thead>
-  <tr>
-    <th>Detalle</th>
-    <!-- Comprueba el rol del usuario antes de mostrar el encabezado de Usuario -->
-    <th *ngIf="userData && userData.rol === 'Admin'">Usuario</th>
-    <th>Total del Préstamo</th>
-    <th>% Interés</th>
-    <th>Número de Cuotas</th>
-    <th>Editar</th>
-    <th>Eliminar</th>
-  </tr>
-</thead>
-<tbody>
-  <tr *ngFor="let calculo of userCollectionData | filter: searchQuery; let i = index">
-    <td [ngClass]="{
-      'td1': i % 4 === 0,
-      'td2': i % 4 === 1,
-      'td3': i % 4 === 2,
-      'td4': i % 4 === 3
-    }">{{ calculo.alias }}</td>
-    <!-- Comprueba el rol del usuario antes de mostrar la información del usuario -->
-    <td *ngIf="userData && userData.rol === 'Admin'">{{ userData.fullName }}</td>
-    <td>Q  {{ calculo.cantidad }}</td>
-    <td>{{ calculo.interes }} %</td>
-    <td>{{ calculo.cuotas }}</td>
-    
-    
-    <!-- Comprueba el rol del usuario antes de mostrar los botones de editar y eliminar -->
-    <td *ngIf="userData && userData.rol === 'Admin'">
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditarPrestamo"
-        data-bs-whatever="@mdo" (click)="openEditModal(calculo)"><i class="bi bi-pencil-square"></i></button>
-    </td>
-    <td *ngIf="userData && userData.rol === 'Admin'">
-      <!--<button type="button" class="btn btn-danger" (click)=""><i 
-        class="bi bi-trash3-fill"></i></button> -->
-    </td>
-  </tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Detalle</th>
+      <!-- Comprueba el rol del usuario antes de mostrar el encabezado de Usuario -->
+      <th *ngIf="userData && userData.rol === 'Admin'">Usuario</th>
+      <th>Total del Préstamo</th>
+      <th>% Interés</th>
+      <th>Número de Cuotas</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let calculo of userCollectionData | filter: searchQuery; let i = index">
+      <td [ngClass]="{
+        'td1': i % 4 === 0,
+        'td2': i % 4 === 1,
+        'td3': i % 4 === 2,
+        'td4': i % 4 === 3
+      }">{{ calculo.alias }}</td>
+      <!-- Comprueba el rol del usuario antes de mostrar la información del usuario -->
+      <td *ngIf="userData && userData.rol === 'Admin'">{{ userData.fullName }}</td>
+      <td>Q  {{ calculo.cantidad }}</td>
+      <td>{{ calculo.interes }} %</td>
+      <td>{{ calculo.cuotas }}</td>
+      
+      
+      <!-- Comprueba el rol del usuario antes de mostrar los botones de editar y eliminar -->
+      <td *ngIf="userData && userData.rol === 'Admin'">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditarPrestamo"
+          data-bs-whatever="@mdo" (click)="openEditModal(calculo)"><i class="bi bi-pencil-square"></i></button>
+      </td>
+      <td *ngIf="userData && userData.rol === 'Admin'">
+        <button class="btn btn-danger" (click)="deleteCalculationById(userData.id, calculo.id)">
+          <i class="bi bi-trash3-fill"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-        
-      <!-- Botón para generar un PDF -->
-      <button type="submit" class="boton-agregar">
-          <span>GENERAR PDF</span>
-          <i class="fa-regular fa-file-pdf"></i>
-      </button>
-  </div>
+          
+        <!-- Botón para generar un PDF -->
+        <button type="submit" class="boton-agregar">
+            <span>GENERAR PDF</span>
+            <i class="fa-regular fa-file-pdf"></i>
+        </button>
+    </div>
 </div>
 
 <!-- MODAL PARA EDITAR PRÉSTAMO -->
 <div class="modal fade" id="EditarPrestamo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-4" id="exampleModalLabel">EDITAR PRÉSTAMO</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form class="row g-3">
-                <!-- CAMPO DE ALIAS -->
-                <div class="col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-card-checklist"></i></div>
-                        <input type="text" class="form-control" id="inputAlias" placeholder="Alias"
-                            [(ngModel)]="editCalcAlias" [ngModelOptions]="{ standalone: true }">
-                    </div>
-                </div>
-                <!-- CAMPO DE MONTO MENSUAL -->
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-currency-dollar"></i></div>
-                        <input type="number" class="form-control" id="inputMonthly" placeholder="Monto Mensual"
-                            [(ngModel)]="editCalcMonthly" [ngModelOptions]="{ standalone: true }">
-                    </div>
-                </div>
-                <!-- CAMPO DE % DE INTERÉS -->
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-percent"></i></div>
-                        <input type="number" class="form-control" id="inputInteres" placeholder="% de Interés"
-                            [(ngModel)]="editCalcInteres" [ngModelOptions]="{ standalone: true }">
-                    </div>
-                </div>
-                <!-- CAMPO DE TOTAL DE INTERÉS -->
-                <div class="col-md-12">
-                    <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-cash-coin"></i></div>
-                        <input type="number" class="form-control" id="inputTotalInteres" placeholder="Total de Interés"
-                            [(ngModel)]="editCalcTotalInteres" [ngModelOptions]="{ standalone: true }">
-                    </div>
-                </div>
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h1 class="modal-title fs-4" id="exampleModalLabel">EDITAR PRÉSTAMO</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form class="row g-3">
+                  <!-- CAMPO DE ALIAS -->
+                  <div class="col-md-12">
+                      <div class="input-group">
+                          <div class="input-group-text"><i class="bi bi-card-checklist"></i></div>
+                          <input type="text" class="form-control" id="inputAlias" placeholder="Alias"
+                              [(ngModel)]="editCalcAlias" [ngModelOptions]="{ standalone: true }">
+                      </div>
+                  </div>
+                  <!-- CAMPO DE MONTO MENSUAL -->
+                  <div class="col-md-6">
+                      <div class="input-group">
+                          <div class="input-group-text"><i class="bi bi-currency-dollar"></i></div>
+                          <input type="number" class="form-control" id="inputMonthly" placeholder="Monto Mensual"
+                              [(ngModel)]="editCalcMonthly" [ngModelOptions]="{ standalone: true }">
+                      </div>
+                  </div>
+                  <!-- CAMPO DE % DE INTERÉS -->
+                  <div class="col-md-6">
+                      <div class="input-group">
+                          <div class="input-group-text"><i class="bi bi-percent"></i></div>
+                          <input type="number" class="form-control" id="inputInteres" placeholder="% de Interés"
+                              [(ngModel)]="editCalcInteres" [ngModelOptions]="{ standalone: true }">
+                      </div>
+                  </div>
+                  <!-- CAMPO DE TOTAL DE INTERÉS -->
+                  <div class="col-md-12">
+                      <div class="input-group">
+                          <div class="input-group-text"><i class="bi bi-cash-coin"></i></div>
+                          <input type="number" class="form-control" id="inputTotalInteres" placeholder="Total de Interés"
+                              [(ngModel)]="editCalcTotalInteres" [ngModelOptions]="{ standalone: true }">
+                      </div>
+                  </div>
 
-               <!-- CAMPO DE ALIAS -->
-               <div class="col-md-12">
-                <div class="input-group">
-                    <div class="input-group-text"><i class="bi bi-card-checklist"></i></div>
-                    <input type="text" class="form-control" id="inputAlias" placeholder="Alias"
-                        [(ngModel)]="editCalcId" [ngModelOptions]="{ standalone: true }">
-                </div>
-            </div>
-                <!-- Otros campos si los tienes -->
-            </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-success" (click)="editCalculation()">Guardar</button>
-        </div>
-    </div>
-  </div>
+                 <!-- CAMPO DE ALIAS -->
+                 <div class="col-md-12">
+                  <div class="input-group">
+                      <div class="input-group-text"><i class="bi bi-card-checklist"></i></div>
+                      <input type="text" class="form-control" id="inputAlias" placeholder="Alias"
+                          [(ngModel)]="editCalcId" [ngModelOptions]="{ standalone: true }">
+                  </div>
+              </div>
+                  <!-- Otros campos si los tienes -->
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-success" (click)="editCalculation()">Guardar</button>
+          </div>
+      </div>
+  </div>
 </div>
