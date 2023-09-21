@@ -47,7 +47,7 @@
                         'td4': i % 4 === 3
                     }">{{ calculo.alias }}</td>
                     <!-- Comprueba el rol del usuario antes de mostrar la información del usuario -->
-                    <td *ngIf="userData && userData.rol === 'Admin'">{{ userData.fullName }}</td>
+                    <td *ngIf="userData && userData.rol === 'Admin'">{{ calculo.name }}</td>
                     <td>Q {{ calculo.cantidad }}</td>
                     <td>{{ calculo.interes }} %</td>
                     <td>{{ calculo.cuotas }}</td>

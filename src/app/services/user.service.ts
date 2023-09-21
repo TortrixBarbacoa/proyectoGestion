@@ -159,7 +159,7 @@ export class UserRegister {
             const userData = doc.data();
             const userId = doc.id;
 
-            const CalculosCollectionRef = collection(this.firestore, 'users', userId, 'Calculos');
+            const CalculosCollectionRef = collection(this.firestore, 'users', userId, 'mis_prestamos');
 
             const calculosArrayUsers = await getDocs(CalculosCollectionRef);
 
