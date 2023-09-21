@@ -70,7 +70,7 @@ h1 {
     display: flex;
     flex-direction: row;
     padding: none;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 /* Estilos para el contenedor de cambio Filtrar por Préstamo */

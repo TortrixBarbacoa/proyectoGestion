@@ -16,61 +16,63 @@
         </div>
 
         <!-- Tabla de cálculos -->
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Detalle</th>
-                    <!-- Comprueba el rol del usuario antes de mostrar el encabezado de Usuario -->
-                    <th *ngIf="userData && userData.rol === 'Admin'">Usuario</th>
-                    <th>Total del Préstamo</th>
-                    <th>Interés</th>
-                    <th>Cuotas</th>
-                    <th>Mensualidad</th>
-                    <!-- Ocultar las etiquetas de Editar y Eliminar según el rol -->
-                    <th *ngIf="userData && userData.rol === 'Admin'">Editar</th>
-                    <th *ngIf="userData && userData.rol === 'Admin'">Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Agrega una comprobación para mostrar un mensaje cuando no haya datos -->
-                <ng-container *ngIf="userCollectionData.length === 0">
+        <div class="overflow-y-auto" style="margin-bottom: 1rem;">
+            <table class="data-table">
+                <thead>
                     <tr>
-                        <td colspan="8" class="no-data-message">No hay ningún préstamo aún.</td>
+                        <th>Detalle</th>
+                        <!-- Comprueba el rol del usuario antes de mostrar el encabezado de Usuario -->
+                        <th *ngIf="userData && userData.rol === 'Admin'">Usuario</th>
+                        <th>Total del Préstamo</th>
+                        <th>Interés</th>
+                        <th>Cuotas</th>
+                        <th>Mensualidad</th>
+                        <!-- Ocultar las etiquetas de Editar y Eliminar según el rol -->
+                        <th *ngIf="userData && userData.rol === 'Admin'">Editar</th>
+                        <th *ngIf="userData && userData.rol === 'Admin'">Eliminar</th>
                     </tr>
-                </ng-container>
-                <tr *ngFor="let calculo of userCollectionData | filter: searchQuery; let i = index">
-                    <td [ngClass]="{
-                        'td1': i % 4 === 0,
-                        'td2': i % 4 === 1,
-                        'td3': i % 4 === 2,
-                        'td4': i % 4 === 3
-                    }">{{ calculo.alias }}</td>
-                    <!-- Comprueba el rol del usuario antes de mostrar la información del usuario -->
-                    <td *ngIf="userData && userData.rol === 'Admin'">{{ calculo.name }}</td>
-                    <td>Q {{ calculo.cantidad }}</td>
-                    <td>{{ calculo.interes }} %</td>
-                    <td>{{ calculo.cuotas }}</td>
-                    <td>Q  {{ calculo.monthly }}</td>
-
-                    <!-- Comprueba el rol del usuario antes de mostrar los botones de editar y eliminar -->
-                    <td *ngIf="userData && userData.rol === 'Admin'">
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditarPrestamo"
-                            data-bs-whatever="@mdo" (click)="openEditModal(calculo)"><i
-                                class="bi bi-pencil-square"></i></button>
-                    </td>
-                    <td *ngIf="userData && userData.rol === 'Admin'">
-                        <button class="btn btn-danger" (click)="deleteCalculationById(userData.id, calculo.id)">
-                            <i class="bi bi-trash3-fill"></i>
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn btn-success" (click)="generarPDF()">
-                            <i class="fa-regular fa-file-pdf"></i> Generar PDF
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <!-- Agrega una comprobación para mostrar un mensaje cuando no haya datos -->
+                    <ng-container *ngIf="userCollectionData.length === 0">
+                        <tr>
+                            <td colspan="8" class="no-data-message">No hay ningún préstamo aún.</td>
+                        </tr>
+                    </ng-container>
+                    <tr *ngFor="let calculo of userCollectionData | filter: searchQuery; let i = index">
+                        <td [ngClass]="{
+                            'td1': i % 4 === 0,
+                            'td2': i % 4 === 1,
+                            'td3': i % 4 === 2,
+                            'td4': i % 4 === 3
+                        }">{{ calculo.alias }}</td>
+                        <!-- Comprueba el rol del usuario antes de mostrar la información del usuario -->
+                        <td *ngIf="userData && userData.rol === 'Admin'">{{ calculo.name }}</td>
+                        <td>Q {{ calculo.cantidad }}</td>
+                        <td>{{ calculo.interes }} %</td>
+                        <td>{{ calculo.cuotas }}</td>
+                        <td>Q  {{ calculo.monthly }}</td>
+    
+                        <!-- Comprueba el rol del usuario antes de mostrar los botones de editar y eliminar -->
+                        <td *ngIf="userData && userData.rol === 'Admin'">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditarPrestamo"
+                                data-bs-whatever="@mdo" (click)="openEditModal(calculo)"><i
+                                    class="bi bi-pencil-square"></i></button>
+                        </td>
+                        <td *ngIf="userData && userData.rol === 'Admin'">
+                            <button class="btn btn-danger" (click)="deleteCalculationById(userData.id, calculo.id)">
+                                <i class="bi bi-trash3-fill"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-success" (click)="generarPDF()">
+                                <i class="fa-regular fa-file-pdf"></i> Generar PDF
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
         <!-- Botón para generar un PDF -->
         <button type="submit" class="boton-agregar">

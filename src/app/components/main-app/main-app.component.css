@@ -180,6 +180,6 @@ select {
 }
 
 .bi-gear:hover {
+    transition: ease-in-out 0.2s;
     rotate: -62deg;
-    scale: 1.05;
 }

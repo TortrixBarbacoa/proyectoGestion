@@ -5,14 +5,14 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-holder">
-                        <h2>Detalle</h2>
-                        <input type="text" formControlName="alias" class="form-control input-style-sol" placeholder="" required>
+                        <h2>Nombre del Préstamo</h2>
+                        <input type="text" formControlName="alias" class="form-control input-style-sol" placeholder="Añade un alias a tu préstamo" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-holder">
                         <h2>Cantidad a Solicitar</h2>
-                        <input required="true" type="number" formControlName="cantidad" class="form-control input-style-sol" placeholder="Cantidad" required>
+                        <input required="true" type="number" formControlName="cantidad" class="form-control input-style-sol" placeholder="Ingresa la cantidad a solicitar" required>
                     </div>
                 </div>
             </div>
@@ -21,14 +21,14 @@
                 <div class="col-md-6">
                     <div class="input-holder">
                         <h2>Interés (%)</h2>
-                        <input required="true"type="number" formControlName="interes" class="form-control input-style-sol" placeholder="Auto %" (input)="calculateCuotas()" required>
+                        <input required="true"type="number" formControlName="interes" class="form-control input-style-sol" placeholder="Ingresa la tasa de interés" (input)="calculateCuotas()" required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-holder">
                         <h2>Cantidad De Cuotas</h2>
                         <select required="true" formControlName="cuotas" class="form-control input-style-sol" name="monthly" id="monthly" (change)="calculateCuotas()" required>
-                            <option value="default" selected disabled>Seleccionar</option>
+                            <option value="default" selected disabled>Selecciona el número de cuotas</option>
                             <option value="3">3</option>
                         <option value="6">6</option>
                         <option value="12">12</option>
@@ -51,20 +51,20 @@
                 <div class="col-md-6">
                     <div class="input-holder">
                         <h2>Cuota Mensual</h2>
-                       <input required="true" type="text" formControlName="monthly" class="form-control input-style-sol" placeholder="Automático" readonly>
+                       <input required="true" type="text" formControlName="monthly" class="form-control input-style-sol" placeholder="Aquí se mostrará la cuota mensual total" readonly>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="input-holder">
                         <h2>Total Interés</h2>
-                        <input required="true" type="text" formControlName="totalInteres" class="form-control input-style-sol" placeholder="Automático" readonly>
+                        <input required="true" type="text" formControlName="totalInteres" class="form-control input-style-sol" placeholder="Aquí se mostrará el interés total" readonly>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-4">
                 <button class="btn btn-calc" [disabled]="!form.valid">
-                    <h3 (click)="solicitarPrestamo()">SOLICITAR PRÉSTAMO</h3>
+                    <h3 (click)="solicitarPrestamo()">Cotiza Tu Préstamo</h3>
                 </button>
             </div>
         </form>
