@@ -70,6 +70,7 @@ export class UserRegister {
               "lastName" : userData.lastName,
               "email" : userData.email,
               "phone" : userData.phone,
+              
               "rol": rol
             }
             resolve(user);
