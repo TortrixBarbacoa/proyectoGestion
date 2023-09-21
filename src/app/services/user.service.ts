@@ -66,6 +66,10 @@ export class UserRegister {
             const user = {
               "id": id,
               "fullName": fullName,
+              "firstName" : userData.firstName,
+              "lastName" : userData.lastName,
+              "email" : userData.email,
+              "phone" : userData.phone,
               "rol": rol
             }
             resolve(user);
