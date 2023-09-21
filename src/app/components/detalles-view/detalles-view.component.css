@@ -51,7 +51,7 @@ h1 {
     margin-left: 2rem; /* Margen izquierdo */
     margin-right: 2rem; /* Margen derecho */
     border-radius: 2rem; /* Radio de borde para esquinas redondeadas */
-    height: 100%; /* Altura del contenedor */
+    height: 36rem; /* Altura del contenedor */
     width: 100%; /* Ancho del contenedor */
     justify-content: center; /* Centrar elementos horizontalmente */
     align-items: center; /* Centrar elementos verticalmente */
@@ -227,6 +227,11 @@ select {
     font-size: 1rem; /* Tamaño del ícono */
     color: #004AAD; /* Color del ícono (puedes ajustarlo) */
     cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+  }
+
+  .container-tabla {
+    width: 100%;
+    margin-bottom: 2rem;
   }
   
   

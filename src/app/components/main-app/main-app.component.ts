@@ -10,6 +10,8 @@ import { UserProfileInfoService } from 'src/app/services/user-profile-info.servi
   styleUrls: ['./main-app.component.css']
 })
 export class MainAppComponent {
+
+  
   userData: any;
   detalleUser: any;
   prueba: any;
