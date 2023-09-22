@@ -101,10 +101,15 @@
                     <div class="row gutters">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="d-flex justify-content-end">
+                                <div [ngClass]="{'active-page-flag': editUserSelected === true}"></div>
+                                <div [ngClass]="{'active-true': editUserSelected === true, 'active-false': editUserSelected === false}"
+                                class="side-element-holder-content container-fluid" (click)="closeComponent()">
+                            </div>
                                 <button type="button" id="submit" name="submit"
-                                    class="btn btn-secondary mx-2" (click)="closeComponent()">Regresar</button>
+                                    class="btn btn-secondary mx-2 form-group" (click)="closeComponent()">Regresar</button>
                                 <button type="button" id="submit" name="submit"
-                                    class="btn btn-primary mx-2" (click)="editUserUid(userData)">Actualizar</button>
+
+                                class="btn btn-primary mx-2" (click)="editUserUid(userData)">Actualizar</button>
                             </div>
                         </div>
                     </div>

@@ -404,12 +404,12 @@ for (let month = 1; month <= cuotas; month++) {
 
   const data = [
     [
-      selectedLoan.alias.toString(),
-      selectedLoan.cantidad.toString(),
-      selectedLoan.cuotas.toString(),
-      selectedLoan.interes.toString(),
-      selectedLoan.monthly.toString(),
-      selectedLoan.totalInteres.toString(),
+      selectedLoan.alias,
+      selectedLoan.cantidad,
+      selectedLoan.cuotas,
+      selectedLoan.interes,
+      selectedLoan.monthly,
+      selectedLoan.totalInteres,
     ]
   ];
 

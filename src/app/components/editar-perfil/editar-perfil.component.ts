@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router'; // <--- import Router
 import { UserRegister } from 'src/app/services/user.service'; // <--- import UserService
 import { UserProfileInfoService } from 'src/app/services/user-profile-info.service';
+import { MainAppComponent } from '../main-app/main-app.component';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -10,12 +11,18 @@ import { UserProfileInfoService } from 'src/app/services/user-profile-info.servi
 })
 export class EditarPerfilComponent {
   userData: any;
+  homeSelected: boolean = true;
+  calculoSelected: boolean = false;
+  detalleSelected: boolean = false;
+  usuarioSelected: boolean = false;
+  editUserSelected: boolean = false;
 
   constructor(
     private userInfo: UserProfileInfoService,
     private userService: UserRegister,
     private router: Router,
-    private userRegister: UserRegister
+    private userRegister: UserRegister,
+    public mainApp: MainAppComponent
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +43,9 @@ export class EditarPerfilComponent {
         alert('Error: '+ error);
       });
   }
-  closeComponent(){
-    
+  closeComponent() {
+    this.mainApp.editUserSelected = false;
+    this.mainApp.homeSelected = true;
   }
+  
 }

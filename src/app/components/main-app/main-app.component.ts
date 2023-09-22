@@ -96,4 +96,5 @@ export class MainAppComponent {
     this.usuarioSelected = false;
     this.editUserSelected = true;
   }
+
 }

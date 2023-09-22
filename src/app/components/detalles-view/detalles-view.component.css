@@ -125,17 +125,16 @@ select {
 /* Estilos para el botón "GENERAR PDF" */
 .boton-agregar {
     align-self: flex-start;
-    padding: 10px 20px; /* Espaciado interno */
-    background-color: #393939; /* Color de fondo del botón */
-    color: #fff; /* Color de texto */
+    padding: 10px; /* Espaciado interno */
+    background-color: black; /* Color de fondo del botón */
+    color: white; /* Color de texto */
     border: none; /* Eliminar bordes */
     border-radius: 5px; /* Radio de borde para esquinas redondeadas */
     cursor: pointer; /* Cambiar el cursor al pasar el mouse */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
-    left: 2.5rem; /* Posición a la izquierda */
-    top: 36.5rem; /* Posición superior */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo *//* Posición superior */
     font-size: 1rem; /* Tamaño de fuente del botón */
-    margin-bottom: 1rem;
+    margin-left: -1rem;
+    margin-top: 2rem;
 }
 
 /* Estilos para el botón "GENERAR PDF" al pasar el mouse */
